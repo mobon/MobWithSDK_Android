@@ -13,7 +13,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 - Build Tool : Android Studio 
 - androidX 권장
  
-## 1. MobMixer SDK 기본설정
+## 1. MobWith SDK 기본설정
 
 - project build.gradle 에 mavenCentral() 을 추가합니다.
 
