@@ -27,12 +27,12 @@ allprojects {
 }
 ```
 
-- app build.gradle 에 com.google.android.gms 와 MobMixer 라이브러리를 추가합니다.
+- app build.gradle 에 com.google.android.gms 와 MobWith 라이브러리를 추가합니다.
 ```XML
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobWithSDK:0.9.0' 
+  implementation 'io.github.mobon:mobWithSDK:0.9.1' 
 }
 ```
 
@@ -61,7 +61,7 @@ android:usesCleartextTraffic="true"
 
 LinearLayout banner_container = findViewById(R.id.banner_container);
 // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
-MobWithBannerView banner = new MobWithBannerView(this,BannerType.BANNER_320x50).setBannerUnitId(TEST_UNIT_ID);
+MobWithBannerView banner = new MobwithBannerView(this).setBannerUnitId(YOUR_UNIT_ID);
 
 // 배너뷰의 리스너를 등록합니다.
 banner.setAdListener(new iBannerCallback() {
@@ -72,13 +72,10 @@ banner.setAdListener(new iBannerCallback() {
                     System.out.println("배너 광고로딩");
                      // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
                        banner_container.addView(rv);
-
-                } else {
-                
+                } else {                
                     System.out.println("광고실패 : " + errorcode);
                     rv.destroyAd();
-                    rv = null;
-                }
+                    rv = null;                }
             }
 
             @Override
