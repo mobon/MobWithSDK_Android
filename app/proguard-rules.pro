@@ -19,3 +19,19 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-dontwarn javax.annotation.**
+
+# A resource is loaded with a relative path so the package of this class must be preserved.
+#-keepnames class com.httpmodule.internal.publicsuffix.PublicSuffixDatabase
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# OkHttp platform used only on JVM and when Conscrypt dependency is available.
+-dontwarn com.httpmodule.internal.platform.ConscryptPlatform
+
+-keep public class com.httpmodule.** { public *;}
+-keep public class com.mobwith.** { *; }
+-keep public class androidx.** { *; }
+-keep public class com.google.** { *; }
