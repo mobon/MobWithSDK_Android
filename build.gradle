@@ -5,8 +5,8 @@ buildscript {
         google()
         jcenter()
         maven { url 'http://deltadna.bintray.com/android' }
-        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
-
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' } //kakao
+        mavenCentral() //mobwith
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.1"
@@ -22,6 +22,7 @@ allprojects {
         jcenter()
         maven { url 'http://deltadna.bintray.com/android' }
         maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
+        mavenCentral()
     }
 }
 
