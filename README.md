@@ -81,7 +81,8 @@ banner.setAdListener(new iBannerCallback() {
                 } else {                
                     System.out.println("광고실패 : " + errorcode);
                     rv.destroyAd();
-                    rv = null;                }
+                    rv = null;     
+                }
             }
 
             @Override
