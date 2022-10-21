@@ -57,8 +57,7 @@ android:usesCleartextTraffic="true"
 
 
 ## 2. ADFIT SDK 추가
-- Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  
- #[Adfit 바로가기](https://github.com/adfit/adfit-android-sdk) 
+- Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  #[Adfit 바로가기](https://github.com/adfit/adfit-android-sdk) 
 
 
 ##  배너 광고 예제
