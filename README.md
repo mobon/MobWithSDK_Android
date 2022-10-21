@@ -58,6 +58,7 @@ android:usesCleartextTraffic="true"
 
 ## 2. ADFIT SDK 추가
 - Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.
+- 
  [Adfit 바로가기](https://github.com/adfit/adfit-android-sdk) 
 
 
@@ -96,15 +97,6 @@ banner.setAdListener(new iBannerCallback() {
         rv.loadAd();
 
 ```
-
-###배너 광고 사이즈별 타입
- 
- |Size in DP (W X H)|Description|AdType Constant|
-|---|:---:|:---:|
-|320x50|Standard Banner|BannerType.BANNER_320x50|
-|320x100|Large Banner|BannerType.BANNER_320x100|
-|300x250|Big Banner|BannerType.BANNER_300x250|
-    
   
 ## 주의 사항
 
