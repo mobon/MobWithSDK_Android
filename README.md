@@ -69,12 +69,11 @@ android:usesCleartextTraffic="true"
     implementation 'com.applovin:applovin-sdk:11.6.0'
     }
   ````
-
- - AndroidManifest.xml 에 발급받은 sdk 추가
- ````
- <meta-data android:name="applovin.sdk.key"
-            android:value={sdk_key}/>
- ````
+  - AndroidManifest.xml 에 발급받은 sdk 추가
+  ````
+  <meta-data android:name="applovin.sdk.key"
+             android:value={sdk_key}/>
+  ````
 
 ##  배너 광고 예제
 
