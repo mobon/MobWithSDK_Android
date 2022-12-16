@@ -60,6 +60,21 @@ android:usesCleartextTraffic="true"
 - Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  
 [Adfit SDK 바로가기](https://github.com/adfit/adfit-android-sdk) 
 
+## 3. AppLovin SDK 추가
+- AppLovin 광고를 송출하기 위해 아래와 같이 연동해 주세요.  
+  - app build.gradle 에 Applovin sdk 추가
+  ````
+  dependencies {
+    ...
+    implementation 'com.applovin:applovin-sdk:11.6.0'
+    }
+  ````
+
+ - AndroidManifest.xml 에 발급받은 sdk 추가
+ ````
+ <meta-data android:name="applovin.sdk.key"
+            android:value={sdk_key}/>
+ ````
 
 ##  배너 광고 예제
 
