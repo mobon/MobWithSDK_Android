@@ -33,7 +33,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobWithSDK:0.9.2' 
+  implementation 'io.github.mobon:mobWithSDK:0.9.3' 
 }
 ```
 
