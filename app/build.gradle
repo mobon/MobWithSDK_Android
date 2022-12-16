@@ -41,7 +41,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation "io.github.mobon:mobwithSDK:0.9.3"
+    implementation "io.github.mobon:mobwithSDK:0.9.4"
     implementation "com.applovin:applovin-sdk:11.6.0"
     implementation "com.kakao.adfit:ads-base:3.12.9"
 
