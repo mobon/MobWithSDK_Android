@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  |version|Description|
 |---|:---:|
+|0.9.3|appLovin 연동 추가|
 |0.9.2|first Release|
 
 ## 개발환경
