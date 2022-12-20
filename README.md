@@ -5,7 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  |version|Description|
 |---|:---:|
-|0.9.4|appLovin 연동 추가|
+|0.9.5|appLovin 연동 추가|
 |0.9.2|first Release|
 
 ## 개발환경
@@ -33,7 +33,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobWithSDK:0.9.4' 
+  implementation 'io.github.mobon:mobWithSDK:0.9.5' 
 }
 ```
 
