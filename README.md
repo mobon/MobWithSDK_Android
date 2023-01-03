@@ -86,33 +86,52 @@ MobWithBannerView banner = new MobwithBannerView(this).setBannerUnitId(YOUR_UNIT
 
 // 배너뷰의 리스너를 등록합니다.
 banner.setAdListener(new iBannerCallback() {
-            @Override
-            public void onLoadedAdInfo(boolean result, String errorcode) {
-                if (result) {
-                    //배너 광고 로딩 성공
-                    System.out.println("배너 광고로딩");
-                     // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
-                       banner_container.addView(rv);
-                } else {                
-                    System.out.println("광고실패 : " + errorcode);
-                    rv.destroyAd();
-                    rv = null;     
-                }
-            }
-
-            @Override
-            public void onAdClicked() {
-                System.out.println("광고클릭");
-            }
-        });
-        
+  @Override
+  public void onLoadedAdInfo(boolean result, String errorcode) {
+    if (result) {
+      //배너 광고 로딩 성공
+      System.out.println("배너 광고로딩");
       
-        
-        // 광고를 호출합니다.
-        rv.loadAd();
+      // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
+      banner_container.addView(rv);
+    } else {                
+      System.out.println("광고실패 : " + errorcode);
+      banner.destroyAd();
+      banner = null;     
+    }
+  }
+
+  @Override
+  public void onAdClicked() {
+    System.out.println("광고클릭");
+  }
+  
+});
+
+// 광고를 호출합니다.
+banner.loadAd();
 
 ```
-  
+
+## 광고뷰의 크기 설정
+광고의 크기는 노출되는 광고의 크기에 따라 자동으로 변경됩니다.  
+따라서 광고를 표시할 뷰의 레이아웃을 아래를 참고하여 설정을 해주어야 광고가 이상없이 출력됩니다.
+
+```java
+....
+<LinearLayout
+  android:id="@+id/banner_container"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_alignParentBottom="true"
+  android:layout_centerHorizontal="true"
+  android:gravity="center"
+  android:orientation="vertical"
+  />
+....
+
+```
+
 ## 주의 사항
 
 - Proguard를 적용하는 경우 proguard configuration 파일 수정이 필요합니다.  
