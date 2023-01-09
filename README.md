@@ -22,7 +22,6 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
     }
 }
@@ -33,7 +32,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobWithSDK:0.9.6' 
+  implementation 'io.github.mobon:mobwithSDK:0.9.6' 
 }
 ```
 
