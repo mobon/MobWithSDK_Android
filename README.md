@@ -92,8 +92,8 @@ banner.setAdListener(new iBannerCallback() {
       System.out.println("배너 광고로딩");
       
       // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
-      banner_container.addView(rv);
-    } else {                
+      banner_container.addView(banner);
+    } else {
       System.out.println("광고실패 : " + errorcode);
       banner.destroyAd();
       banner = null;     
