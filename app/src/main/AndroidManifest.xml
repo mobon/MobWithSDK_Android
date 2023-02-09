@@ -4,33 +4,35 @@
 
     <uses-permission android:name="BIND_GET_INSTALL_REFERRER_SERVICE" />
     <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID" /> <!-- unity sdk -->
-
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <application
-        android:allowBackup="true"
         android:name=".GlobalApplication"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.MobMixerSDKSample">
+        android:theme="@style/Theme.MobMixerSDKSample"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".NativeAdViewTestActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-
-<!--        <meta-data android:name="applovin.sdk.key"-->
-<!--            android:value="cyOmFZkTu_mdxFtH7wD1RVxBwy4Z_NEa6rF5czSgSulvk-DJfrF3-ymxsWhEgUQhDpC1dTwLKR3G8ntO-2uCaT"/>-->
-
-        <meta-data android:name="applovin.sdk.key"
-            android:value="KnkiNki9COTyeQrLAbTXdhThi2rOpl0NZJmxeW46TngyOPnnEe2J6dk_ekkCDoow2rFV1hgMasEHlhqTHT-s9i"/>
-
+        </activity> <!-- <meta-data android:name="applovin.sdk.key" -->
+        <!-- android:value="cyOmFZkTu_mdxFtH7wD1RVxBwy4Z_NEa6rF5czSgSulvk-DJfrF3-ymxsWhEgUQhDpC1dTwLKR3G8ntO-2uCaT"/> -->
+        <meta-data
+            android:name="applovin.sdk.key"
+            android:value="KnkiNki9COTyeQrLAbTXdhThi2rOpl0NZJmxeW46TngyOPnnEe2J6dk_ekkCDoow2rFV1hgMasEHlhqTHT-s9i" />
     </application>
 
 </manifest>

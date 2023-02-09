@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  |version|Description|
 |---|:---:|
+|0.9.7|MobwithNativeADView 추가|
 |0.9.6|appLovin 연동 추가|
 |0.9.2|first Release|
 
@@ -32,7 +33,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:0.9.6' 
+  implementation 'io.github.mobon:mobwithSDK:0.9.7' 
 }
 ```
 
@@ -130,6 +131,37 @@ banner.loadAd();
 ....
 
 ```
+
+
+##  MobwithNativeAdView 광고 예제
+
+MobwithNativeAdView는 사용자가 직접 뷰를 설정하고, 설정된 뷰를 SDK에서 전달받아 각각의 view에 광고 데이터를 설정해주는 기능만 담당하는 AdView입니다.
+
+### 광고 로드 방법
+```java
+....
+nativeAdView = new MobwithNativeAdView(this,
+                adUnitID,
+                (FrameLayout) findViewById(R.id.adview_container),
+                R.layout.custom_native_ad_view,
+                R.id.mediaContainerView,
+                R.id.imageViewAD,
+                R.id.imageViewLogo,
+                R.id.textViewTitle,
+                R.id.textViewDesc,
+                R.id.buttonGo,
+                R.id.infoViewLayout,
+                R.id.imageViewInfo);
+
+nativeAdView.loadAd();
+....
+```
+
+* adview_container에서 아래 각 View의 id를 확인하지 못하게 되는 경우 광고가 제대로 표시되지 않을 수 있으니 주의하시기 바랍니다.
+
+* 위 예시에서 mediaContainerView는 GroupView중 하나여야 하며, imageViewAD를 포함하고 있는 구조 입니다.  
+  미디에이션을 지원하는 외부 SDK중 Native AD를 제공하는 SDK 마다 서로 다른 규격을 요구하는 부분 때문이니 주의 바랍니다.  
+
 
 ## 주의 사항
 
