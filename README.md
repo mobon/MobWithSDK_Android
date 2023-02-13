@@ -162,6 +162,13 @@ nativeAdView.loadAd();
 * 위 예시에서 mediaContainerView는 GroupView중 하나여야 하며, imageViewAD를 포함하고 있는 구조 입니다.  
   미디에이션을 지원하는 외부 SDK중 Native AD를 제공하는 SDK 마다 서로 다른 규격을 요구하는 부분 때문이니 주의 바랍니다.  
 
+### 광고 클릭 버튼을 사용하지 못하는 경우
+```java
+....
+nativeAdView.performAdClicked();
+....
+```
+위 메소드를 호출하여 광고를 클릭한 것과 동일한 효과를 줄 수 있습니다.
 
 ## 주의 사항
 
