@@ -23,10 +23,8 @@ public class NativeAdLoaderTestActivity extends AppCompatActivity {
 
 
     String[] adUnitIDs = new String[] {
-            "10882166",
-            "10882167",
-            "10882168",
-            "10882169"
+            "YOUR_UNIT_ID1",
+            "YOUR_UNIT_ID2"
     };
 
     MobwithNativeAdLoader adLoader;
@@ -167,12 +165,6 @@ public class NativeAdLoaderTestActivity extends AppCompatActivity {
             }
 
         }
-
-//        @Override
-//        public void onViewDetachedFromWindow(@NonNull ViewHolder holder) {
-//            super.onViewDetachedFromWindow(holder);
-//            getAdLoader().detachADView(holder.index);
-//        }
 
         @Override
         public int getItemCount() {

@@ -40,7 +40,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
 
-    implementation "io.github.mobon:mobwithSDK:0.9.7"
+    implementation "io.github.mobon:mobwithSDK:0.9.10"
     implementation "com.applovin:applovin-sdk:11.6.0"
     implementation "com.kakao.adfit:ads-base:3.12.15"
 }

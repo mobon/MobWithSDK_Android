@@ -1,12 +1,15 @@
 package com.enliple.mobmixersdk;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -44,11 +47,12 @@ public class MainActivity extends AppCompatActivity {
         LogPrint.setLogPrint(true);
 
         buttonLoadBannerAD.setOnClickListener( v -> {
-            loadAd(bannerUnitID_320x50);
+            loadAdWith(bannerUnitID_320x50);
         });
         buttonLoadSquareAD.findViewById(R.id.buttonLoadSquareAD).setOnClickListener( v -> {
-            loadAd(bannerUnitID_300x250);
+            loadAdWith(bannerUnitID_300x250);
         });
+
         buttonNextAD.setOnClickListener( v -> {
             if (adBannerView != null) {
                 adBannerView.showNextAd();
@@ -62,7 +66,29 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        findViewById(R.id.buttonNativeAdLoaderTest).setOnClickListener( v -> {
+            Intent intent = new Intent(this, NativeAdLoaderTestActivity.class);
+            startActivity(intent);
+        });
 
+
+    }
+
+
+    private void loadAdWith(String defaultUnitID) {
+        InputMethodManager inputManager = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        View focusedView = getCurrentFocus();
+        if (focusedView != null) {
+            inputManager.hideSoftInputFromWindow(focusedView.getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+        }
+
+        String adUnitId = ((EditText)findViewById(R.id.editTextAdUnitID)).getText().toString();
+        if (adUnitId != null && adUnitId.isEmpty()) {
+            loadAd(defaultUnitID);
+        }
+        else {
+            loadAd(adUnitId);
+        }
     }
 
 

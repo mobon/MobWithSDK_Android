@@ -7,6 +7,29 @@
     tools:context=".MainActivity">
     <!--    android:background="@color/material_on_primary_emphasis_high_type"-->
 
+    <TextView
+        android:id="@+id/textViewUnitID"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Unit ID :"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <EditText
+        android:id="@+id/editTextAdUnitID"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textViewUnitID"
+        app:layout_constraintBottom_toBottomOf="@id/textViewUnitID"
+        app:layout_constraintLeft_toRightOf="@id/textViewUnitID"
+        />
+
     <Button
         android:id="@+id/buttonLoadBannerAD"
         android:text="320x50"
@@ -15,7 +38,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewUnitID"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/buttonLoadSquareAD"
         app:layout_constraintHorizontal_weight="1"
@@ -72,12 +95,27 @@
         android:id="@+id/buttonNativeAdViewTest"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:text="NativeAdView 테스트"
+        android:text="Test NativeAdView"
         android:textSize="16dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/buttonNativeAdLoaderTest"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/buttonNativeAdLoaderTest"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="Test NativeAdLoader"
+        android:textSize="16dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="30dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/buttonNativeAdViewTest"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
