@@ -15,24 +15,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobMixerSDKSample"
         android:usesCleartextTraffic="true">
+
         <activity
-            android:name=".NativeAdViewTestActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity android:name=".MainActivity">
+            android:name=".MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- <meta-data android:name="applovin.sdk.key" -->
-        <!-- android:value="cyOmFZkTu_mdxFtH7wD1RVxBwy4Z_NEa6rF5czSgSulvk-DJfrF3-ymxsWhEgUQhDpC1dTwLKR3G8ntO-2uCaT"/> -->
+        </activity>
+
+        <activity
+            android:name=".NativeAdViewTestActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".NativeAdLoaderTestActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="applovin.sdk.key"
-            android:value="KnkiNki9COTyeQrLAbTXdhThi2rOpl0NZJmxeW46TngyOPnnEe2J6dk_ekkCDoow2rFV1hgMasEHlhqTHT-s9i" />
+            android:value="cyOmFZkTu_mdxFtH7wD1RVxBwy4Z_NEa6rF5czSgSulvk-DJfrF3-ymxsWhEgUQhDpC1dTwLKR3G8ntO-2uCaT"/>
+<!--        <meta-data-->
+<!--            android:name="applovin.sdk.key"-->
+<!--            android:value="KnkiNki9COTyeQrLAbTXdhThi2rOpl0NZJmxeW46TngyOPnnEe2J6dk_ekkCDoow2rFV1hgMasEHlhqTHT-s9i" />-->
     </application>
 
 </manifest>

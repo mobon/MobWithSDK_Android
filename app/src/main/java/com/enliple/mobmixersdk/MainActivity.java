@@ -28,13 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonLoadSquareAD;
     private Button buttonNextAD;
 
-//    release
-//    private final String bannerUnitID_300x250 = "YOUR_AD_UNIT_ID";
-//    private final String bannerUnitID_320x50 = "YOUR_AD_UNIT_ID";
-
-    //    test
-    private final String bannerUnitID_300x250 = "1726";
-    private final String bannerUnitID_320x50 = "1726";
+    private final String bannerUnitID_300x250 = "YOUR_AD_UNIT_ID";
+    private final String bannerUnitID_320x50 = "YOUR_AD_UNIT_ID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

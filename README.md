@@ -3,12 +3,13 @@
 MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있습니다.  
 
 # MobWith Android SDK Release History
- |version|Description|
-|---|:---:|
-|0.9.9|BugFix|
-|0.9.7|MobwithNativeADView 추가|
-|0.9.6|appLovin 연동 추가|
-|0.9.2|first Release|
+ | version |        Description         |
+ | ------- | :------------------------: |
+ | 0.9.10  | MobwithNativeAdLoader 추가 |
+ | 0.9.9   |           BugFix           |
+ | 0.9.7   |  MobwithNativeADView 추가  |
+ | 0.9.6   |     appLovin 연동 추가     |
+ | 0.9.2   |       first Release        |
 
 ## 개발환경
 - 최소 SDK Version : Android 23
@@ -76,9 +77,9 @@ android:usesCleartextTraffic="true"
   <meta-data android:name="applovin.sdk.key"
              android:value={sdk_key}/>
   ````
-
+<br>
+<br>
 ##  배너 광고 예제
-
 ```java
 
 LinearLayout banner_container = findViewById(R.id.banner_container);
@@ -113,7 +114,8 @@ banner.setAdListener(new iBannerCallback() {
 banner.loadAd();
 
 ```
-
+<br>
+<br>
 ## 광고뷰의 크기 설정
 광고의 크기는 노출되는 광고의 크기에 따라 자동으로 변경됩니다.  
 따라서 광고를 표시할 뷰의 레이아웃을 아래를 참고하여 설정을 해주어야 광고가 이상없이 출력됩니다.
@@ -132,8 +134,8 @@ banner.loadAd();
 ....
 
 ```
-
-
+<br>
+<br>
 ##  MobwithNativeAdView 광고 예제
 
 MobwithNativeAdView는 사용자가 직접 뷰를 설정하고, 설정된 뷰를 SDK에서 전달받아 각각의 view에 광고 데이터를 설정해주는 기능만 담당하는 AdView입니다.
@@ -169,8 +171,85 @@ nativeAdView.loadAd();
 nativeAdView.performAdClicked();
 ....
 ```
-위 메소드를 호출하여 광고를 클릭한 것과 동일한 효과를 줄 수 있습니다.
+위 메소드를 호출하여 광고를 클릭한 것과 동일한 효과를 줄 수 있습니다.  
+<br>
+<br>
+  
+##  MobwithNativeAdLoader 광고 예제
+MobwithNativeAdLoader는 NativeAdView를 리스트 타입의 뷰에 노출하고자 할 때 적용 가능한 기능 입니다.
 
+### 1. 광고 로드 방법
+
+먼저 광고를 불러오기 위해 MobwithNativeAdLoader를 생성 및 초기화를 진행해 줍니다.
+```java
+
+//MobwithNativeAdLoader 생성
+String[] adUnitIDs = new String[] { "광고 Unit ID" };   //1개 이상의 Unit를 설정해 주어야 합니다.
+
+MobwithNativeAdLoader adLoader = new MobwithNativeAdLoader(this, adUnitIDs);
+adLoader.setAdListener(new iNativeBannerCallback() {
+
+  @Overridepublic void onLoadedAd(int index, boolean result, String errorStr) {
+    if (result) {
+      RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+      recyclerView.getAdapter().notifyItemChanged(index);
+    }
+    ...
+  }
+
+  @Override
+  public void onAdClicked(int index) {
+    // 광고 클릭시
+  }
+
+});
+
+//광고를 표시할 View 설정
+adLoader.setNativeADView(this,
+      R.layout.custom_native_ad_view,
+      R.id.mediaContainerView,
+      R.id.imageViewAD,
+      R.id.imageViewLogo,
+      R.id.textViewTitle,
+      R.id.textViewDesc,
+      R.id.buttonGo,
+      R.id.infoViewLayout,
+      R.id.imageViewInfo);
+
+
+.......
+
+```
+이후 RecyclerView등 리스트 타입 View의  Adapter 클래스에서 다음과 같이 광고View를 받아와서 화면에 표시해 줍니다.
+
+```java
+
+...
+
+@Override
+public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+  
+  if (position % 5 == 4) {
+
+    // loadAD를 호출하면 이미 로드된 광고가 있거나 이미 생성된 뷰가 있는 경우 해당 View를 전달해 줍니다.
+    ViewGroup adView = adLoader.loadAD(NativeAdLoaderTestActivity.this, position);
+    
+
+    // adLoader.isLoadedAd(position)을 호출하면 광고를 받아온 경우 true를 반환합니다. 해당 값을 확인후 뷰에 추가하는것을 권장드립니다.
+    if (adView != null && adLoader.isLoadedAd(position) ) {
+      holder.frameLayout.addView(adView);
+    }
+    ....
+  }
+  ...
+
+}
+...
+
+```
+* 더 자세한 사항은 Sample앱을 참고 하시기 바랍니다.
+<br>
+<br>
 ## 주의 사항
 
 - Proguard를 적용하는 경우 proguard configuration 파일 수정이 필요합니다.  

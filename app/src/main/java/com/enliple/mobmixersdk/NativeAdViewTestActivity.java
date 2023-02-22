@@ -3,15 +3,26 @@ package com.enliple.mobmixersdk;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
+import com.applovin.sdk.AppLovinSdk;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+import com.mobwith.manager.LogPrint;
+import com.mobwith.manager.SpManager;
+import com.mobwith.sdk.Key;
+import com.mobwith.sdk.MobwithNativeAdView;
+
+import java.util.Arrays;
+import java.util.UUID;
+
 public class NativeAdViewTestActivity extends AppCompatActivity {
 
-    String adUnitID = "10881787";
+    String adUnitID = "YOUR_UNIT_ID";
 
     MobwithNativeAdView nativeAdView;
 
