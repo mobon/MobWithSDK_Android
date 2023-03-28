@@ -5,6 +5,8 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 0.9.12  | Bug Fix |
+ | 0.9.11  | 전면/엔딩배너, 배너 사이즈(320x100) 추가 |
  | 0.9.10  | MobwithNativeAdLoader 추가 |
  | 0.9.9   |           BugFix           |
  | 0.9.7   |  MobwithNativeADView 추가  |
@@ -35,7 +37,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:0.9.9' 
+  implementation 'io.github.mobon:mobwithSDK:0.9.11' 
 }
 ```
 
@@ -69,7 +71,7 @@ android:usesCleartextTraffic="true"
   ````
   dependencies {
     ...
-    implementation 'com.applovin:applovin-sdk:11.6.0'
+    implementation 'com.applovin:applovin-sdk:11.8.2'
     }
   ````
   - AndroidManifest.xml 에 발급받은 sdk 추가
@@ -79,6 +81,7 @@ android:usesCleartextTraffic="true"
   ````
 <br>
 <br>
+
 ##  배너 광고 예제
 ```java
 
@@ -116,6 +119,7 @@ banner.loadAd();
 ```
 <br>
 <br>
+
 ## 광고뷰의 크기 설정
 광고의 크기는 노출되는 광고의 크기에 따라 자동으로 변경됩니다.  
 따라서 광고를 표시할 뷰의 레이아웃을 아래를 참고하여 설정을 해주어야 광고가 이상없이 출력됩니다.
@@ -136,6 +140,7 @@ banner.loadAd();
 ```
 <br>
 <br>
+
 ##  MobwithNativeAdView 광고 예제
 
 MobwithNativeAdView는 사용자가 직접 뷰를 설정하고, 설정된 뷰를 SDK에서 전달받아 각각의 view에 광고 데이터를 설정해주는 기능만 담당하는 AdView입니다.
@@ -250,6 +255,135 @@ public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 * 더 자세한 사항은 Sample앱을 참고 하시기 바랍니다.
 <br>
 <br>
+
+
+## 전면배너 광고 예제
+
+
+``` java
+InterstitialDialog interstitialDialog = new InterstitialDialog(this).setBackCancel(true).setType(Key.INTERSTITIAL_TYPE.FULL).setUnitId("광고 Unit ID").build();
+interstitialDialog.setAdListener(new iInterstitialCallback() {
+  @Override
+  public void onLoadedAdInfo(boolean result, String errorStr) {
+    new Handler(Looper.getMainLooper()).post(new Runnable() {
+      @Override
+      public void run() {
+        if (result) {
+          Toast.makeText(MainActivity.this, "광고 로드 성공(FULL)", Toast.LENGTH_SHORT).show();
+          }
+        }
+      });
+  }
+
+  @Override
+  public void onClickEvent(Key.INTERSTITIAL_KEYCODE keyCode) {
+    if (keyCode == Key.INTERSTITIAL_KEYCODE.CLOSE_AD) {
+      System.out.println("전면 닫음(FULL)");
+      interstitialFullDialog.load();
+    }
+    else if (keyCode == Key.INTERSTITIAL_KEYCODE.ADCLICK) {
+      System.out.println("전면 광고 클릭(FULL)");
+    }
+  }
+
+
+  @Override
+  public void onOpened() {
+    System.out.println("전면 오픈(FULL)");
+  }
+
+  @Override
+  public void onClosed() {
+    System.out.println("전면 닫음(FULL)");
+  }              
+});
+
+interstitialDialog.load();
+
+```
+전면배너는 광고를 로딩후 로딩이 완료된 시점 이후에 광고를 표시하여야 합니다.  
+위 예시에서는 광고를 로딩하는 부분까지만 소개된 것 입니다.  
+위에서 광고 로딩을 성공한 경우 아래와 같이 호출하여 광고를 화면에 출력할 수 있습니다.
+
+```java
+interstitialDialog.show();
+```
+
+
+### 전면배너 광고 사이즈 별 타입
+
+ | Size | Type Constant | Description | 
+ |---|:---:|:---:|
+ | NORMAL | INTERSTITIAL_TYPE.NORMAL | 일반사이즈의 전면배너 광고(화면을 꽉 채우지 않음) |
+ | FULL | INTERSTITIAL_TYPE.FULL | 전체화면을 꽉 채우는 형태의 전면배너광고 |  
+
+<br>
+<br>
+
+## 엔딩배너 광고 예제
+
+``` java
+EndingDialog endingDialog = new EndingDialog(this).setBackCancel(false).setUnitId(bannerUnitID_Interstitial).build();
+endingDialog.setAdListener(new iInterstitialCallback() {
+  @Override
+  public void onLoadedAdInfo(boolean result, String errorStr) {
+    new Handler(Looper.getMainLooper()).post(new Runnable() {
+      @Override
+      public void run() {
+        if (result) {
+          Toast.makeText(MainActivity.this, "광고 로드 성공(ENDING)", Toast.LENGTH_SHORT).show();
+        }
+      }
+    });
+  }
+
+  @Override
+  public void onClickEvent(Key.INTERSTITIAL_KEYCODE keyCode) {
+    if (keyCode == Key.INTERSTITIAL_KEYCODE.CLOSE_AD) {
+      //엔딩 - 닫음
+    }
+    else if (keyCode == Key.INTERSTITIAL_KEYCODE.ADCLICK) {
+      //엔딩 - 광고 클릭
+    }
+    else if (keyCode == Key.INTERSTITIAL_KEYCODE.CLOSE_APP) {
+      //엔딩 - 종료 버튼 클릭
+      }
+    }
+    
+    @Override
+    public void onOpened() {
+      //엔딩 광고 오픈
+    }
+
+    @Override
+    public void onClosed() {
+      //엔딩 광고 닫음
+    }
+  });
+
+```
+엔딩 배너의 경우 전면배너와 유사한 형태로 동작하게 됩니다.  
+광고 로딩이 완료되면 아래와 같이 호출하여 엔딩배너를 표시할 수 있습니다.
+
+```java
+endingDialog.show();
+```
+
+<br>
+
+## 전면/엔딩 배너 Click Event KeyCode
+전면 / 엔딩배너의 onClickEvent에서 내려오는 KeyCode는 아래와 같습니다.
+
+ | KeyCode | Description | 
+ |---|:---:|
+ | CLOSE_AD | 일반사이즈의 전면배너 광고(화면을 꽉 채우지 않음) |
+ | ADCLICK | 전체화면을 꽉 채우는 형태의 전면배너광고 |  
+ | CLOSE_APP | 전체화면을 꽉 채우는 형태의 전면배너광고 |  
+
+
+<br>
+<br>
+
 ## 주의 사항
 
 - Proguard를 적용하는 경우 proguard configuration 파일 수정이 필요합니다.  
