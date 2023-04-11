@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 0.9.14  |           BugFix           |
  | 0.9.13  |           BugFix           |
  | 0.9.12  |           BugFix           |
  | 0.9.11  | 전면/엔딩배너, 배너 사이즈(320x100) 추가 |
@@ -38,7 +39,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:0.9.12' 
+  implementation 'io.github.mobon:mobwithSDK:0.9.14' 
 }
 ```
 
