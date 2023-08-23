@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.5   | 뉴스피드 배너 MobwithArticleBannerView 추가 |
  | 1.0.4   |           BugFix           |
  | 1.0.3   |           BugFix           |
  | 1.0.2   |           BugFix           |
@@ -43,7 +44,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.4' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.5' 
 }
 ```
 
@@ -387,6 +388,37 @@ endingDialog.show();
  | CLOSE_APP | 전체화면을 꽉 채우는 형태의 전면배너광고 |  
 
 
+<br>
+<br>
+
+## 뉴스피드 배너 예제
+한줄 기사가 표시되는 텍스트형 배너 뷰 입니다.<br>
+해당 뷰의 경우 높이값 30dp에 맞게 UI가 구현되어 있으며, 해당 지면의 높이값이 30dp 보다 작은 경우 화면에 UI가 제대로 표시되지 않을 수 있습니다.
+
+``` java
+MobwithArticleBannerView adArticleBannerView =  new MobwithArticleBannerView(this)
+adArticleBannerView.setAdListener(new iArticleBannerCallback() {
+
+            @Override
+            public void onLoadedArticles(boolean result, String errorStr) {
+                System.out.println("[MobwithArticleBannerView] onLoadedArticles() : "  +result);
+            }
+
+            @Override
+            public void onArticleClicked() {
+                System.out.println("[MobwithArticleBannerView] onArticleClicked()");
+            }
+
+        });
+banner_container.addView(adArticleBannerView);
+
+adArticleBannerView.loadAd();
+```
+
+
+
+
+<br>
 <br>
 <br>
 
