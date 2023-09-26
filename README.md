@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.7   |           MobwithBannerView 자동갱신 기능 추가           |
  | 1.0.6   |           BugFix           |
  | 1.0.5   | 뉴스피드 배너 MobwithArticleBannerView 추가 |
  | 1.0.4   |           BugFix           |
@@ -45,7 +46,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.6' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.7' 
 }
 ```
 
@@ -95,7 +96,9 @@ android:usesCleartextTraffic="true"
 
 LinearLayout banner_container = findViewById(R.id.banner_container);
 // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
-MobWithBannerView banner = new MobwithBannerView(this).setBannerUnitId(YOUR_UNIT_ID);
+MobWithBannerView banner = new MobwithBannerView(this)
+                                      .setBannerUnitId(YOUR_UNIT_ID)
+                                      .setInterval(60);
 
 // 배너뷰의 리스너를 등록합니다.
 banner.setAdListener(new iBannerCallback() {
@@ -125,8 +128,21 @@ banner.setAdListener(new iBannerCallback() {
 banner.loadAd();
 
 ```
+### 1) setInterval() 
+  해당 함수를 통해 배너 광고를 일정 시간마다 자동으로 갱신되도록 할 수 있습니다.  
+  설정되는 값은 '초(Second)'단위로 설정해 주셔야 하며, 최소값은 60초로 60보다 작은 값을 설정하는 경우 60으로 설정 됩니다.  
+  다만, 0으로 설정하는 경우 0으로 설정이 되며, 자동 갱신 기능이 동작하지 않습니다.  
+  기본 값은 0이며, 설정후 광고를 처음 한번 로딩시켜야 동작합니다.  
+
+
+### 2) stop(), restart()
+  위 두 함수를 통해 광고 자동 갱신을 정지/재시작 할 수 있습니다.  
+  특정 상황에 따라 뷰 내에서 직접 광고의 자동갱신 여부를 결정하고 있지만, 명시적으로 자동 갱신 여부를 결정할때 사용하면 됩니다.  
+  setInterval()에서 0으로 설정한 경우 자동 갱신 정지/재시작은 동작하지 않습니다.  
+  해당 함수들의 호출 및 동작은 setInterval()을 통해 광고 갱신이 되도록 설정 한뒤 광고를 처음 한번 로딩을 해주어야 합니다.
 <br>
 <br>
+
 
 ## 광고뷰의 크기 설정
 광고의 크기는 노출되는 광고의 크기에 따라 자동으로 변경됩니다.  
