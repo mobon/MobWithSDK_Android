@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.10  |           ADOP, AdFit배너 광고 연동 추가 및 광고 지원 타입 추가  |
  | 1.0.9   |           BugFix           |
  | 1.0.8   |           BugFix           |
  | 1.0.7   |           MobwithBannerView 자동갱신 기능 추가           |
@@ -48,7 +49,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.9' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.10' 
 }
 ```
 
@@ -90,6 +91,13 @@ android:usesCleartextTraffic="true"
   <meta-data android:name="applovin.sdk.key"
              android:value={sdk_key}/>
   ````
+
+## 4. ADOP BidMad SDK 추가  
+- ADOP 광고를 송출하기 위해 링크를 참고하여 주세요. (3.9.0 버전에 최적화 되어 있습니다.) <br>
+[ADOP BidMad SDK 바로가기](https://github.com/bidmad/Bidmad-Android/blob/master/README.md#1-SDK-%EC%84%B8%ED%8C%85) 
+- SDK 세팅 부분만 참고하시면되며, API키등 설정해줘야 하는 값들은 협의된 내용을 토대로 적용하시면 됩니다.
+
+<br>
 <br>
 <br>
 
