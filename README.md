@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.13  |           BugFix           |
  | 1.0.12  |           BugFix           |
  | 1.0.11  |           BugFix           |
  | 1.0.10  |           ADOP, AdFit배너 광고 연동 추가 및 광고 지원 타입 추가  |
@@ -51,7 +52,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.12' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.13' 
 }
 ```
 
@@ -124,6 +125,8 @@ banner.setAdListener(new iBannerCallback() {
       banner_container.addView(banner);
     } else {
       System.out.println("광고실패 : " + errorcode);
+
+      // 광고 로딩 실패시 동작 - setInterval()을 통해 자동 갱신을 설정했어도 실패한 경우 갱신되지 않음.
       banner.destroyAd();
       banner = null;     
     }
@@ -152,6 +155,15 @@ banner.loadAd();
   특정 상황에 따라 뷰 내에서 직접 광고의 자동갱신 여부를 결정하고 있지만, 명시적으로 자동 갱신 여부를 결정할때 사용하면 됩니다.  
   setInterval()에서 0으로 설정한 경우 자동 갱신 정지/재시작은 동작하지 않습니다.  
   해당 함수들의 호출 및 동작은 setInterval()을 통해 광고 갱신이 되도록 설정 한뒤 광고를 처음 한번 로딩을 해주어야 합니다.
+
+### 3) 광고 수신 실패시
+  setInterval()을 통해 광고 자동 갱신 기능을 설정 하였어도 광고 수신을 실패한 경우 이후 부터는 광고가 자동으로 갱신되지 않으니 주의 바랍니다.
+  해당 상황 발생시 직접 loadAd()를 다시 호출해줘야 광고를 다시 불러올수 있으니 참고 하시면 됩니다.
+
+### 4) destoryAd()
+  본 함수를 호출하여 광고 객체들을 초기화 시켜줄 수 있습니다. 자동 갱신등이 설정된 경우 동작을 멈추게 됩니다.
+  따라서 해당 배너뷰를 사용하지 않게 되는 경우 반드시 호출해 주셔야 합니다.
+
 <br>
 <br>
 
