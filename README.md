@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.15  |           BugFix           |
  | 1.0.14  |           BugFix           |
  | 1.0.13  |           BugFix           |
  | 1.0.12  |           BugFix           |
@@ -53,7 +54,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.13' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.15' 
 }
 ```
 
@@ -163,7 +164,7 @@ banner.loadAd();
 
 ### 4) destroyAd()
   본 함수를 호출하여 광고 객체들을 초기화 시켜줄 수 있습니다. 자동 갱신등이 설정된 경우 동작을 멈추게 됩니다.
-  따라서 해당 배너뷰를 사용하지 않게 되는 경우 반드시 호출해 주셔야 합니다.
+  따라서 해당 배너뷰를 사용하지 않게 되는 경우 호출는 것을 권장 드립니다.
 
 <br>
 <br>
