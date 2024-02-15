@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.16  |           AppLovin 제거, AdFit SDK 버전 업데이트     |
  | 1.0.15  |           BugFix           |
  | 1.0.14  |           BugFix           |
  | 1.0.13  |           BugFix           |
@@ -54,7 +55,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.15' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.16' 
 }
 ```
 
@@ -79,25 +80,14 @@ android:usesCleartextTraffic="true"
 
 
 ## 2. ADFIT SDK 추가
-- Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  
-[Adfit SDK 바로가기](https://github.com/adfit/adfit-android-sdk) 
+- Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  <br>
+  [Adfit SDK 바로가기](https://github.com/adfit/adfit-android-sdk) 
+- 현재 3.15.2버전에 최적화 되어 있습니다.
+- 경우에 따라서는 가이드에 안내된 "com.kakao.adfit:ads-base:3.15.2"가 아닌 다른 버전/타입의 SDK를 추가해야 할 수도 있습니다. <br>
+  (해당되는 경우 별도로 안내됩니다.)
 
-## 3. AppLovin SDK 추가
-- AppLovin 광고를 송출하기 위해 아래와 같이 연동해 주세요.  
-  - app build.gradle 에 Applovin sdk 추가
-  ````
-  dependencies {
-    ...
-    implementation 'com.applovin:applovin-sdk:11.8.2'
-    }
-  ````
-  - AndroidManifest.xml 에 발급받은 sdk 추가
-  ````
-  <meta-data android:name="applovin.sdk.key"
-             android:value={sdk_key}/>
-  ````
 
-## 4. ADOP BidMad SDK 추가  
+## 3. ADOP BidMad SDK 추가  
 - ADOP 광고를 송출하기 위해 링크를 참고하여 주세요. (3.9.0 버전에 최적화 되어 있습니다.) <br>
 [ADOP BidMad SDK 바로가기](https://github.com/bidmad/Bidmad-Android/blob/master/README.md#1-SDK-%EC%84%B8%ED%8C%85) 
 - SDK 세팅 부분만 참고하시면되며, API키등 설정해줘야 하는 값들은 협의된 내용을 토대로 적용하시면 됩니다.
