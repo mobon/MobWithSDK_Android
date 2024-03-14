@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.19  |           BugFix           |
  | 1.0.18  |           BugFix           |
  | 1.0.17  |           BannerWithArticleView 추가     |
  | 1.0.16  |           AppLovin 제거, AdFit SDK 버전 업데이트     |
@@ -57,7 +58,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.18' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.19' 
 }
 ```
 
@@ -453,7 +454,8 @@ adArticleBannerView.loadAd();
 
 
 ## BannerWithArticleView 예제
-광고 및 컨텐츠가 제대로 표시되기 위해서는 반드시 해당 뷰의 높이가 100dp 이상이어야 합니다.
+광고 및 컨텐츠가 제대로 표시되기 위해서는 반드시 해당 뷰의 높이가 100dp 이상이어야 합니다. 가로 사이즈의 경우 해당 뷰가 추가되는 부모뷰의 사이즈를 따라갑니다.
+권장하는 뷰 사이즈는 360x100이며, 가로 사이즈의 경우 320 이상을 권장드립니다.
 사용 방법은 대체로 MobwithBannerView와 동일합니다.
 ``` java
 
