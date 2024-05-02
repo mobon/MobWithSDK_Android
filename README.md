@@ -5,7 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
- | 1.0.21  |           Coupang SDK 추가  |
+ | 1.0.21  |           Coupang SDK 추가, Bug Fix  |
  | 1.0.20  |           BugFix           |
  | 1.0.19  |           BugFix           |
  | 1.0.18  |           BugFix           |
