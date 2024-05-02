@@ -5,6 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.21  |           Coupang SDK 추가  |
  | 1.0.20  |           BugFix           |
  | 1.0.19  |           BugFix           |
  | 1.0.18  |           BugFix           |
@@ -37,7 +38,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 ## 개발환경
 - 최소 SDK Version : Android 23
-- Compile SDK : Android 31 이상
+- Compile SDK : Android 34
 - Build Tool : Android Studio 
 - androidX 권장
  
@@ -95,6 +96,58 @@ android:usesCleartextTraffic="true"
 - ADOP 광고를 송출하기 위해 링크를 참고하여 주세요. (3.9.0 버전에 최적화 되어 있습니다.) <br>
 [ADOP BidMad SDK 바로가기](https://github.com/bidmad/Bidmad-Android/blob/master/README.md#1-SDK-%EC%84%B8%ED%8C%85) 
 - SDK 세팅 부분만 참고하시면되며, API키등 설정해줘야 하는 값들은 협의된 내용을 토대로 적용하시면 됩니다.
+
+## 4. Coupang SDK 추가
+- Gradle 설정
+  - 먼저 프로젝트 단위의 Gradle에 아래를 참고하여 CoupangSDK를 가져오기 위한 저장소를 추가해줍니다.
+    ```XML
+    buildscript {
+      ...
+      repositories {
+          ...
+          maven { url "https://raw.githubusercontent.com/coupang-ads-sdk/android/main" }
+          ...
+      }
+    }
+    
+    ...
+    
+
+    allprojects {
+      repositories {
+          ...
+          maven { url "https://raw.githubusercontent.com/coupang-ads-sdk/android/main" }
+          ...
+      }
+    }
+    ```
+
+  - 다음으로 App단위의 Gradle 파일에 아래와 같이 Coupnag SDK를 Implements 해주시면 됩니다.
+    ```XML
+    implementation 'com.coupang:ads:1.2.4'
+    ```
+- AdnroidMenifest.xml에서 아래와 같이 applicaion태그 내부에 meta-data를 추가해 줍니다. 넣어야 할 값은 가이드와 함께 제공된 Coupang Sub ID 값을 참고 하시면 됩니다.
+  ```XML
+    <application>
+      ....
+      <meta-data android:name="coupang_ads_sub_id"
+            android:value="{전달 받은 Coupnag Sub ID}"/>
+      ....
+    </application>
+  ```
+
+
+- Proguard 설정  
+  Proguard 사용시 아래와 같이 예외 설정을 추가해 주셔야 합니다.
+  ```XML
+    -keep interface com.coupang.ads.dto.DTO
+    -keep class * implements com.coupang.ads.dto.DTO { *; }
+  ```
+  
+- 주의 및 참고 사항
+  - 광고View들을 생성시 전달하는 Context는 LifecycleOwner를 상속 또는 Implements하고 있어야 합니다.  
+    대체로 AndroidX의 ComponentActivity를 상속받고 있는 객체라면 특별히 문제 되지는 않습니다.
+  - 전면배너의 경우 사이즈 옵션과는 무관하게 Coupang SDK에서 지원하는 사이즈로만 출력됩니다.
 
 <br>
 <br>
