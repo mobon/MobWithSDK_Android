@@ -1,41 +1,11 @@
 # MobWith Android SDK
-
 MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있습니다.  
 
-# MobWith Android SDK Release History
- | version |        Description         |
- | ------- | :------------------------: |
- | 1.0.22  |           BugFix           |
- | 1.0.21  |           Coupang SDK 추가, Bug Fix  |
- | 1.0.20  |           BugFix           |
- | 1.0.19  |           BugFix           |
- | 1.0.18  |           BugFix           |
- | 1.0.17  |           BannerWithArticleView 추가     |
- | 1.0.16  |           AppLovin 제거, AdFit SDK 버전 업데이트     |
- | 1.0.15  |           BugFix           |
- | 1.0.14  |           BugFix           |
- | 1.0.13  |           BugFix           |
- | 1.0.12  |           BugFix           |
- | 1.0.11  |           BugFix           |
- | 1.0.10  |           ADOP, AdFit배너 광고 연동 추가 및 광고 지원 타입 추가  |
- | 1.0.9   |           BugFix           |
- | 1.0.8   |           BugFix           |
- | 1.0.7   |           MobwithBannerView 자동갱신 기능 추가           |
- | 1.0.6   |           BugFix           |
- | 1.0.5   | 뉴스피드 배너 MobwithArticleBannerView 추가 |
- | 1.0.4   |           BugFix           |
- | 1.0.3   |           BugFix           |
- | 1.0.2   |           BugFix           |
- | 1.0.0   |           BugFix           |
- | 0.9.14  |           BugFix           |
- | 0.9.13  |           BugFix           |
- | 0.9.12  |           BugFix           |
- | 0.9.11  | 전면/엔딩배너, 배너 사이즈(320x100) 추가 |
- | 0.9.10  | MobwithNativeAdLoader 추가 |
- | 0.9.9   |           BugFix           |
- | 0.9.7   |  MobwithNativeADView 추가  |
- | 0.9.6   |     appLovin 연동 추가     |
- | 0.9.2   |       first Release        |
+
+## 최신 버전 및 변경사항
+- 최신버전 : 1.0.23
+- 변견사항 : Bug fix
+<br>
 
 ## 개발환경
 - 최소 SDK Version : Android 23
@@ -61,7 +31,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.22' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.23' 
 }
 ```
 
@@ -559,3 +529,47 @@ banner.loadAd();
 
 - Proguard를 적용하는 경우 proguard configuration 파일 수정이 필요합니다.  
 자세한 구현 내용은 샘플 프로젝트의 `proguard.cfg ` 파일 또는 [proguard-rules.pro](/app/proguard-rules.pro) 참고해 주세요.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+# MobWith Android SDK Release History
+ | version |        Description         |
+ | ------- | :------------------------: |
+ | 1.0.23  |           BugFix           |
+ | 1.0.22  |           BugFix           |
+ | 1.0.21  |           Coupang SDK 추가, Bug Fix  |
+ | 1.0.20  |           BugFix           |
+ | 1.0.19  |           BugFix           |
+ | 1.0.18  |           BugFix           |
+ | 1.0.17  |           BannerWithArticleView 추가     |
+ | 1.0.16  |           AppLovin 제거, AdFit SDK 버전 업데이트     |
+ | 1.0.15  |           BugFix           |
+ | 1.0.14  |           BugFix           |
+ | 1.0.13  |           BugFix           |
+ | 1.0.12  |           BugFix           |
+ | 1.0.11  |           BugFix           |
+ | 1.0.10  |           ADOP, AdFit배너 광고 연동 추가 및 광고 지원 타입 추가  |
+ | 1.0.9   |           BugFix           |
+ | 1.0.8   |           BugFix           |
+ | 1.0.7   |           MobwithBannerView 자동갱신 기능 추가           |
+ | 1.0.6   |           BugFix           |
+ | 1.0.5   | 뉴스피드 배너 MobwithArticleBannerView 추가 |
+ | 1.0.4   |           BugFix           |
+ | 1.0.3   |           BugFix           |
+ | 1.0.2   |           BugFix           |
+ | 1.0.0   |           BugFix           |
+ | 0.9.14  |           BugFix           |
+ | 0.9.13  |           BugFix           |
+ | 0.9.12  |           BugFix           |
+ | 0.9.11  | 전면/엔딩배너, 배너 사이즈(320x100) 추가 |
+ | 0.9.10  | MobwithNativeAdLoader 추가 |
+ | 0.9.9   |           BugFix           |
+ | 0.9.7   |  MobwithNativeADView 추가  |
+ | 0.9.6   |     appLovin 연동 추가     |
+ | 0.9.2   |       first Release        |
