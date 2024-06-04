@@ -3,7 +3,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.23
+- 최신버전 : 1.0.25
 - 변견사항 : Bug fix
 <br>
 
@@ -31,7 +31,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.23' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.25' 
 }
 ```
 
@@ -541,6 +541,7 @@ banner.loadAd();
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.25  |           BugFix           |
  | 1.0.23  |           BugFix           |
  | 1.0.22  |           BugFix           |
  | 1.0.21  |           Coupang SDK 추가, Bug Fix  |
