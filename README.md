@@ -444,9 +444,9 @@ endingDialog.show();
 
  | KeyCode | Description | 
  |---|:---:|
- | CLOSE_AD | 일반사이즈의 전면배너 광고(화면을 꽉 채우지 않음) |
- | ADCLICK | 전체화면을 꽉 채우는 형태의 전면배너광고 |  
- | CLOSE_APP | 전체화면을 꽉 채우는 형태의 전면배너광고 |  
+ | CLOSE_AD | 광고창을 닫는 버튼을 눌렀을때(앱 종료 아님) |
+ | ADCLICK | 광고를 클릭한 경우 |  
+ | CLOSE_APP | 앱 종료 버튼을 눌렀을때 |  
 
 
 <br>
