@@ -120,9 +120,16 @@ android:usesCleartextTraffic="true"
     대체로 AndroidX의 ComponentActivity를 상속받고 있는 객체라면 특별히 문제 되지는 않습니다.
   - 전면배너의 경우 사이즈 옵션과는 무관하게 Coupang SDK에서 지원하는 사이즈로만 출력됩니다.
 
+
+## 5. AdMob SDK 추가  
+- AdMob SDK 광고를 송출하기 위해 링크를 참고하여 주세요. (22.0.0 버전에 최적화 되어 있습니다.) <br>
+[AdMob Android SDK 바로가기](https://developers.google.com/admob/android/quick-start?hl=ko) 
+- 앱 구성 부분만 참고하시면 되며, App ID (APPLICATION_ID)등 설정해줘야 하는 값들은 협의된 내용을 토대로 적용하시면 됩니다.
+
 <br>
 <br>
 <br>
+
 
 ##  배너 광고 예제
 ```java
