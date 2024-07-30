@@ -3,8 +3,8 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.30
-- 변견사항 : Bug fix
+- 최신버전 : 1.0.31
+- 변경사항 : Bug fix
 <br>
 
 ## 개발환경
@@ -617,6 +617,7 @@ bannerView.loadAd();
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.30  |           BugFix           |
  | 1.0.30  |           BugFix           |
  | 1.0.29  |           BugFix           |
  | 1.0.28  |           BugFix           |
