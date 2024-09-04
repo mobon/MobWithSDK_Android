@@ -3,8 +3,10 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.32
-- 변경사항 : Bug fix
+- 최신버전 : 1.0.33
+- 변경사항
+  - Coupang SDK의 NativeAd 기능 추가  
+  - Coupang SDK 버전 교체(1.2.4 -> 1.3.0)
 <br>
 
 ## 개발환경
@@ -31,7 +33,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.30' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.33' 
 }
 ```
 
@@ -95,7 +97,7 @@ android:usesCleartextTraffic="true"
 
   - 다음으로 App단위의 Gradle 파일에 아래와 같이 Coupnag SDK를 Implements 해주시면 됩니다.
     ```XML
-    implementation 'com.coupang:ads:1.2.4'
+    implementation 'com.coupang:ads:1.3.0'
     ```
 - AdnroidMenifest.xml에서 아래와 같이 applicaion태그 내부에 meta-data를 추가해 줍니다. 넣어야 할 값은 가이드와 함께 제공된 Coupang Sub ID 값을 참고 하시면 됩니다.
   ```XML
@@ -612,6 +614,7 @@ bannerView.loadAd();
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.33  |           Coupang SDK의 NativeAd 기능 추가  |
  | 1.0.32  |           BugFix           |
  | 1.0.31  |           BugFix           |
  | 1.0.30  |           BugFix           |
