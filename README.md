@@ -553,7 +553,7 @@ freePassAdView.setMcLogoImage(getResources().getDrawable(com.mobwith.sdk.R.drawa
 
 
 //프리패스 배너뷰의 Listener를 등록합니다.  MobWithBannerView와 달리 iFreePassBannerCallback을 등록해주셔야 합니다.
-bannerView.setAdListener(new iFreePassBannerCallback() {
+freePassAdView.setAdListener(new iFreePassBannerCallback() {
     @Override
     public void onLoadedAdInfo(boolean result, String errorStr) {
         System.out.println("[MobwithFreePassAdViewTest] onLoadedAdInfo :  "  +result);
@@ -597,6 +597,132 @@ bannerView.loadAd();
 <br>
 <br>
 
+## MobwithPointBannerView 예제
+해당 광고뷰는 광고 클릭시 리워드를 제공하기 위한 기능 및 UI가 추가된 배너뷰 입니다.  
+리워드 제공에 대한 각 기능들은 직접 구현해 주셔야 하며, 현재는 클릭 또는 노출시 리워드 제공에 대한 기능만 고려된 관계로  
+리워드와 관련된 별도의 콜백은 제공되고 있지 않습니다.  
+해당 부분은 광고 로딩 성공과 광고 클릭시 전달되는 콜백 이벤트를 활용하시면 됩니다.
+
+기본 광고 로딩을 위한 방법은 일반 배너광고(MobWithBannerView)와 거의 동일하며 아래와 같습니다.
+
+``` java
+LinearLayout banner_container = findViewById(R.id.banner_container);
+
+// 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
+MobwithPointBannerView bannerView = new MobwithPointBannerView(this).setBannerUnitId(YOUR_UNIT_ID);                                            
+
+
+//리워드 제공 가능 여부를 설정합니다.
+//SDK에서는 관련 UI를 제어하는 부분만 담당하며, 실제 리워드 제공에 대해서는 아래 Listener에서 직접 처리해야 합니다.
+//설정값은 다음과 같습니다
+// - true  : 리워드를 제공할 수 있는 상태 
+// - false : 리워드를 제공할 수 없는 상태 (이미 리워드를 받아간 경우, 리워드 제한등)
+pointBannerView.setPointEnable(true);
+
+pointBannerView.setAdListener(new iBannerCallback() {
+  @Override
+  public void onLoadedAdInfo(boolean result, String errorcode) {
+      if (result) {
+      //배너 광고 로딩 성공
+      System.out.println("배너 광고로딩");
+      
+      //광고를 띄우고자 하는 layout에 배너뷰를 삽입합니다.
+      banner_container.addView(bannerView);
+    } 
+    else {
+      System.out.println("광고실패 : " + errorcode);
+
+      // 광고 로딩 실패시 동작 - setInterval()을 통해 자동 갱신을 설정했어도 실패한 경우 갱신되지 않음.
+      bannerView.destroyAd();
+      bannerView = null;     
+    }
+  }
+
+  @Override
+  public void onAdClicked() {
+      if(bannerView != null) {
+          bannerView.setPointEnable(false);
+      }
+      
+      ...
+      //실제 리워드 제공을 위한 동작 구현.
+      ...
+  }
+
+});
+
+// 광고를 호출합니다.
+bannerView.loadAd();
+
+``` 
+
+
+<br>
+<br>
+<br>
+
+
+## MobwithMultiPointBannerView 예제
+기능은 MobwithPointBannerView와 동일하나, 하나의 광고만 표시하던 MobwithPointBannerView와 달리,
+최대 5개의 광고를 좌우 스크롤하여 표시해주는 BannerView 입니다.
+다만, 포인트 제공 가능 여부등 일부 기능의 경우 SDK 자체적으로 처리해주는 부분이 있으며, 해당 부분의 변경이 필요하신 경우 별도로 문의를 해주셔야 합니다.
+
+광고의 적용은 기존 BannerView들과 거의 유사하며, 아래 내용을 참고하시면 됩니다.
+``` java
+LinearLayout banner_container = findViewById(R.id.banner_container);
+
+
+MobwithMultiPointBannerView bannerView = new MobwithMultiPointBannerView(this)
+
+// 광고 ID의 경우 아래와 같이 배열의 형태로 넣어주셔야하며, 최대 5개까지 적용 가능 합니다.
+String[] bannerUnitIDs = new String[] { 
+    "YOUR_UNIT_ID_1",
+    "YOUR_UNIT_ID_2",
+    "YOUR_UNIT_ID_3",
+    "YOUR_UNIT_ID_4",
+    "YOUR_UNIT_ID_5"
+};
+bannerView.setBannerUnitIds(bannerUnitIDs);
+
+// 기존과는 다르게 광고View를 미리 추가해 줍니다.
+banner_container.addView(bannerView);
+
+pointBannerView.setAdListener(new iMultiPointBannerCallback() {
+
+    @Override
+    public void onLoadedAdInfo(boolean result, String errorStr) {
+        // 광고 로딩 성공/실패 여부가 여기에 전달 됩니다.
+    }
+
+    @Override
+    public void onAdClicked(int index, boolean isRewarded) {
+        // 광고를 클릭한 경우 메세지가 전달 됩니다.
+        // index : 클릭된 광고의 index
+        // isRewarded : 이미 리워드를 제공한 광고인지 여부, 이미 포인트가 제공된 광고인 경우 true
+        
+        // 여기에서 리워드 제공 여부 판단, 리워드를 제공한 이후 아래 함수 호출.
+        pointBannerView.setRewarded(index);
+    }
+});
+
+
+// 광고를 호출합니다.
+// 추가로, 포인트 제공 가능 여부의 리셋 기준을 만족하더라도 
+// 아래 함수가 호출되지 않으면 UI가 변경되지 않으니 해당 부분 참고 바랍니다.
+bannerView.loadAd();
+
+``` 
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
 
 ## 주의 사항
 
@@ -614,6 +740,7 @@ bannerView.loadAd();
 # MobWith Android SDK Release History
  | version |        Description         |
  | ------- | :------------------------: |
+ | 1.0.34  |           MobwithPointBannerView, MobwithMultiPointBannerView 추가  |
  | 1.0.33  |           Coupang SDK의 NativeAd 기능 추가  |
  | 1.0.32  |           BugFix           |
  | 1.0.31  |           BugFix           |
