@@ -3,10 +3,10 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.33
+- 최신버전 : 1.0.35
 - 변경사항
-  - Coupang SDK의 NativeAd 기능 추가  
-  - Coupang SDK 버전 교체(1.2.4 -> 1.3.0)
+  - Unity Ads SDK 미디에이션 추가
+  - IronSource(LevelPlay) SDK 미디에이션 추가
 <br>
 
 ## 개발환경
@@ -33,7 +33,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.33' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.35' 
 }
 ```
 
@@ -66,7 +66,7 @@ android:usesCleartextTraffic="true"
 
 
 ## 3. ADOP BidMad SDK 추가  
-- ADOP 광고를 송출하기 위해 링크를 참고하여 주세요. (3.9.0 버전에 최적화 되어 있습니다.) <br>
+- ADOP 광고를 송출하기 위해 링크를 참고하여 주세요. (3.18.0 버전에 최적화 되어 있습니다.) <br>
 [ADOP BidMad SDK 바로가기](https://github.com/bidmad/Bidmad-Android/blob/master/README.md#1-SDK-%EC%84%B8%ED%8C%85) 
 - SDK 세팅 부분만 참고하시면되며, API키등 설정해줘야 하는 값들은 협의된 내용을 토대로 적용하시면 됩니다.
 
@@ -121,6 +121,32 @@ android:usesCleartextTraffic="true"
   - 광고View들을 생성시 전달하는 Context는 LifecycleOwner를 상속 또는 Implements하고 있어야 합니다.  
     대체로 AndroidX의 ComponentActivity를 상속받고 있는 객체라면 특별히 문제 되지는 않습니다.
   - 전면배너의 경우 사이즈 옵션과는 무관하게 Coupang SDK에서 지원하는 사이즈로만 출력됩니다.
+
+<br>
+<br>
+
+## 5. Unity Ads SDK 추가
+- Unity Ads 광고를 송출하기 위해 링크를 참고하여 주세요. (4.7.0 버전에 최적화 되어 있습니다.) <br>
+[Unity Ads SDK 바로가기](https://docs.unity.com/ads/ko-kr/manual/AndroidDeveloperIntegrations) 
+- SDK 연동 요구사항 및 Unity Ads SDK를 설치하기 위한 부분을 참고 하시면 됩니다.
+- GameID 설정  
+  Unity Ads SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 GameID의 설정이 필요합니다.
+  ```java
+  MobwithSDK.getInstance().setUnityGameId(this,"{ 전달 받은 GameId }");
+  ```   
+
+<br>
+<br>
+
+## 6. IronSource(LevelPlay) SDK 추가
+- IronSource(LevelPlay) 광고를 송출하기 위해 링크를 참고하여 주세요. (8.4.0 버전에 최적화 되어 있습니다.) <br>
+[IronSource(LevelPlay) SDK 바로가기](https://developers.is.com/ironsource-mobile/android/getting-started-android/) 
+- Getting started와 Adnroid SDK Integration 항목을 참고 하시면 됩니다.
+- AppKey 설정  
+  IronSource(LevelPlay) SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
+  ```java
+  MobwithSDK.getInstance().setLevelPlayAppKey(this,"{ 전달 받은 AppKey }");
+  ```
 
 
 <br>
@@ -738,47 +764,48 @@ bannerView.loadAd();
 
 
 # MobWith Android SDK Release History
- | version |        Description         |
- | ------- | :------------------------: |
- | 1.0.34  |           MobwithPointBannerView, MobwithMultiPointBannerView 추가  |
- | 1.0.33  |           Coupang SDK의 NativeAd 기능 추가  |
- | 1.0.32  |           BugFix           |
- | 1.0.31  |           BugFix           |
- | 1.0.30  |           BugFix           |
- | 1.0.29  |           BugFix           |
- | 1.0.28  |           BugFix           |
- | 1.0.27  |           BugFix, AdMob 버전 교체           |
- | 1.0.26  |           MobwithFreePassAdView 추가           |
- | 1.0.25  |           BugFix           |
- | 1.0.23  |           BugFix           |
- | 1.0.22  |           BugFix           |
- | 1.0.21  |           Coupang SDK 추가, Bug Fix  |
- | 1.0.20  |           BugFix           |
- | 1.0.19  |           BugFix           |
- | 1.0.18  |           BugFix           |
- | 1.0.17  |           BannerWithArticleView 추가     |
- | 1.0.16  |           AppLovin 제거, AdFit SDK 버전 업데이트     |
- | 1.0.15  |           BugFix           |
- | 1.0.14  |           BugFix           |
- | 1.0.13  |           BugFix           |
- | 1.0.12  |           BugFix           |
- | 1.0.11  |           BugFix           |
- | 1.0.10  |           ADOP, AdFit배너 광고 연동 추가 및 광고 지원 타입 추가  |
- | 1.0.9   |           BugFix           |
- | 1.0.8   |           BugFix           |
- | 1.0.7   |           MobwithBannerView 자동갱신 기능 추가           |
- | 1.0.6   |           BugFix           |
- | 1.0.5   | 뉴스피드 배너 MobwithArticleBannerView 추가 |
- | 1.0.4   |           BugFix           |
- | 1.0.3   |           BugFix           |
- | 1.0.2   |           BugFix           |
- | 1.0.0   |           BugFix           |
- | 0.9.14  |           BugFix           |
- | 0.9.13  |           BugFix           |
- | 0.9.12  |           BugFix           |
- | 0.9.11  | 전면/엔딩배너, 배너 사이즈(320x100) 추가 |
- | 0.9.10  | MobwithNativeAdLoader 추가 |
- | 0.9.9   |           BugFix           |
+ | version |        Description        |
+ | :-----: | :------------------------ |
+ | 1.0.35  |  Unity Ads SDK, LevelPlay(IronSource) SDK 추가 |
+ | 1.0.34  |  MobwithPointBannerView, MobwithMultiPointBannerView 추가 |
+ | 1.0.33  |  Coupang SDK의 NativeAd 기능 추가 |
+ | 1.0.32  |  BugFix           |
+ | 1.0.31  |  BugFix           |
+ | 1.0.30  |  BugFix           |
+ | 1.0.29  |  BugFix           |
+ | 1.0.28  |  BugFix           |
+ | 1.0.27  |  BugFix, AdMob 버전 교체           |
+ | 1.0.26  |  MobwithFreePassAdView 추가           |
+ | 1.0.25  |  BugFix           |
+ | 1.0.23  |  BugFix           |
+ | 1.0.22  |  BugFix           |
+ | 1.0.21  |  Coupang SDK 추가, Bug Fix  |
+ | 1.0.20  |  BugFix           |
+ | 1.0.19  |  BugFix           |
+ | 1.0.18  |  BugFix           |
+ | 1.0.17  |  BannerWithArticleView 추가     |
+ | 1.0.16  |  AppLovin 제거, AdFit SDK 버전 업데이트     |
+ | 1.0.15  |  BugFix           |
+ | 1.0.14  |  BugFix           |
+ | 1.0.13  |  BugFix           |
+ | 1.0.12  |  BugFix           |
+ | 1.0.11  |  BugFix           |
+ | 1.0.10  |  ADOP, AdFit배너 광고 연동 추가 및 광고 지원 타입 추가  |
+ | 1.0.9   |  BugFix           |
+ | 1.0.8   |  BugFix           |
+ | 1.0.7   |  MobwithBannerView 자동갱신 기능 추가           |
+ | 1.0.6   |  BugFix           |
+ | 1.0.5   |  뉴스피드 배너 MobwithArticleBannerView 추가 |
+ | 1.0.4   |  BugFix           |
+ | 1.0.3   |  BugFix           |
+ | 1.0.2   |  BugFix           |
+ | 1.0.0   |  BugFix           |
+ | 0.9.14  |  BugFix           |
+ | 0.9.13  |  BugFix           |
+ | 0.9.12  |  BugFix           |
+ | 0.9.11  |  전면/엔딩배너, 배너 사이즈(320x100) 추가 |
+ | 0.9.10  |  MobwithNativeAdLoader 추가 |
+ | 0.9.9   |  BugFix           |
  | 0.9.7   |  MobwithNativeADView 추가  |
- | 0.9.6   |     appLovin 연동 추가     |
- | 0.9.2   |       first Release        |
+ | 0.9.6   |  appLovin 연동 추가     |
+ | 0.9.2   |  first Release        |
