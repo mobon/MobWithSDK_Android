@@ -3,7 +3,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.35
+- 최신버전 : 1.0.36
 - 변경사항
   - Unity Ads SDK 미디에이션 추가
   - IronSource(LevelPlay) SDK 미디에이션 추가
@@ -33,7 +33,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.35' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.36' 
 }
 ```
 
@@ -741,6 +741,68 @@ bannerView.loadAd();
 
 
 
+## MobwithRewardVideoDialog 예제
+광고를 본 사용자에게 리워드를 지급하기 위한 광고 입니다.
+전면배너와 유사항 형태로 광고가 표시되며, 실제 사용방법도 전면배너와 거의 동일합니다.
+
+광고를 호출하는 방법은 아래와 같습니다.
+``` java
+
+MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(this).setUnitId("YOUR_UNIT_ID").build();
+
+// 콜백을 받기위한 Listener는 iRewardAdsCallback를 사용합니다.
+rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
+  @Override
+  public void onLoadedAdInfo(boolean result, String errorStr) {
+      if (result) {
+        // 광고 로딩 성공
+      } 
+      else {
+        // 광고 로딩 실패
+      }
+  }
+
+  @Override
+  public void onAdClicked() {
+    // 광고를 클릭한 경우
+  }
+
+  @Override
+  public void onOpened() {
+    // 로드된 광고가 화면에 표시된 경우
+  }
+
+  @Override
+  public void onClosed() {
+    // 광고 창을 닫은 경우
+      LogPrint.d("RewardAdTestActivity", "onClosed");
+  }
+
+  @Override
+  public void onSkip() {
+    // 광고를 끝까지 보지 않고 스킵한 경우
+  }
+
+  @Override
+  public void onReward() {
+    // 각 광고별로 리워드 조건을 충족한 경우
+  }
+});
+
+// 광고 데이터를 로드합니다.
+rewardVideoDialog.load();
+
+// onLoadedAdInfo에서 result가 성공일 경우
+// isLoaded() 함수를 통해 로드된 광고가 존재하는지 확인 할 수 있습니다.
+if (rewardVideoDialog.isLoaded()) {
+  rewardVideoDialog.show();   //화면에 광고를 표시합니다.
+}
+
+```
+
+
+
+
 <br>
 <br>
 <br>
@@ -766,6 +828,7 @@ bannerView.loadAd();
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.36  |  MobwithRewardVideoDialog 추가 |
  | 1.0.35  |  Unity Ads SDK, LevelPlay(IronSource) SDK 추가 |
  | 1.0.34  |  MobwithPointBannerView, MobwithMultiPointBannerView 추가 |
  | 1.0.33  |  Coupang SDK의 NativeAd 기능 추가 |
