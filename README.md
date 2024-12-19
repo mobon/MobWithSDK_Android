@@ -3,9 +3,9 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.38
+- 최신버전 : 1.0.39
 - 변경사항
-  - BugFix
+  - 전면, 엔딩, 리워드 등 전체화면을 띄우는 광고에 onFailOpened() 콜백 추가.
 <br>
 
 ## 개발환경
@@ -32,7 +32,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.38' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.39' 
 }
 ```
 
@@ -393,6 +393,12 @@ interstitialDialog.setAdListener(new iInterstitialCallback() {
   public void onClosed() {
     System.out.println("전면 닫음(FULL)");
   }              
+
+  @Override
+  public void onFailOpened() {
+    //전면 배너 광고 오픈 실패
+  }
+
 });
 
 interstitialDialog.load();
@@ -455,6 +461,11 @@ endingDialog.setAdListener(new iInterstitialCallback() {
     @Override
     public void onClosed() {
       //엔딩 광고 닫음
+    }
+
+    @Override
+    public void onFailOpened() {
+      //엔딩 광고 오픈 실패
     }
   });
 
@@ -772,6 +783,11 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
   }
 
   @Override
+  public void onFailOpened() {
+    // 로드된 광고를 화면에 표시하지 못한경우.
+  }
+
+  @Override
   public void onClosed() {
     // 광고 창을 닫은 경우
       LogPrint.d("RewardAdTestActivity", "onClosed");
@@ -827,6 +843,7 @@ if (rewardVideoDialog.isLoaded()) {
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.39  |  전면, 엔딩, 리워드 등 전체화면을 띄우는 광고에 onFailOpened() 콜백 추가.           |
  | 1.0.38  |  BugFix           |
  | 1.0.37  |  LevelPlay(IronSource) SDK의 사용이 강제되는 문제 수정 |
  | 1.0.36  |  MobwithRewardVideoDialog 추가 |
