@@ -3,9 +3,9 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.40
+- 최신버전 : 1.0.41
 - 변경사항
-  - 후후 간편적립 배너를 위한 MobwithWhoWhoPointBannerBridge 추가
+  - MobwithWhoWhoPointBannerBridge 기능 수정
 <br>
 
 ## 개발환경
@@ -32,7 +32,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.40' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.41' 
 }
 ```
 
@@ -928,6 +928,7 @@ if (rewardVideoDialog.isLoaded()) {
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.41  |  MobwithWhoWhoPointBannerBridge 기능 수정           |
  | 1.0.40  |  후후 간편적립 배너를 위한 MobwithWhoWhoPointBannerBridge 추가           |
  | 1.0.39  |  전면, 엔딩, 리워드 등 전체화면을 띄우는 광고에 onFailOpened() 콜백 추가.           |
  | 1.0.38  |  BugFix           |
