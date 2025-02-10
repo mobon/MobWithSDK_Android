@@ -3,9 +3,9 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.42
+- 최신버전 : 1.0.43
 - 변경사항
-  - BugFix
+  - MobwithRewardVideoDialog 기능 및 UI 개선
 <br>
 
 ## 개발환경
@@ -32,7 +32,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.42' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.43' 
 }
 ```
 
@@ -928,6 +928,7 @@ if (rewardVideoDialog.isLoaded()) {
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.43  |  MobwithRewardVideoDialog 기능 및 UI 개선           |
  | 1.0.42  |  BugFix           |
  | 1.0.41  |  MobwithWhoWhoPointBannerBridge 기능 수정           |
  | 1.0.40  |  후후 간편적립 배너를 위한 MobwithWhoWhoPointBannerBridge 추가           |
