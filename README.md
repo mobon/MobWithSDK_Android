@@ -3,9 +3,9 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.44
+- 최신버전 : 1.0.45
 - 변경사항
-  - BugFix
+  - MobwithRewardVideoDialog 배너형 타입 추가 및 UI 수정
 <br>
 
 ## 개발환경
@@ -32,7 +32,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.44' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.45' 
 }
 ```
 
@@ -845,6 +845,10 @@ protected void onDestroy() {
 
 MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(this).setUnitId("YOUR_UNIT_ID").build();
 
+// 영상형, 배너형 선택.  true로 설정시 영상형으로 광고가 표시되며, false로 설정시 배너형으로 광고가 표시됩니다.
+// 배너형으로 광고 표시를 선택한 경우 영상형 광고를 제공하는 DSP 광고(ex. 유니티, 레벨플레이 등)의 표시가 제한됩니다.
+rewardVideoDialog.setWillCountdown(true);
+
 // 콜백을 받기위한 Listener는 iRewardAdsCallback를 사용합니다.
 rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
   @Override
@@ -928,6 +932,7 @@ if (rewardVideoDialog.isLoaded()) {
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.45  |  MobwithRewardVideoDialog 배너형 타입 추가 및 UI 수정            |
  | 1.0.44  |  BugFix           |
  | 1.0.43  |  MobwithRewardVideoDialog 기능 및 UI 개선           |
  | 1.0.42  |  BugFix           |
