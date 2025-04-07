@@ -3,7 +3,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.46
+- 최신버전 : 1.0.47
 - 변경사항
   - BugFix
 <br>
@@ -32,7 +32,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.46' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.47' 
 }
 ```
 
@@ -932,6 +932,7 @@ if (rewardVideoDialog.isLoaded()) {
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.47  |  BugFix           |
  | 1.0.46  |  BugFix           |
  | 1.0.45  |  MobwithRewardVideoDialog 배너형 타입 추가 및 UI 수정            |
  | 1.0.44  |  BugFix           |
