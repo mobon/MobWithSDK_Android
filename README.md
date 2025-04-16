@@ -3,9 +3,10 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.47
+- 최신버전 : 1.0.48
 - 변경사항
-  - BugFix
+  - MobwithBannerView 로딩중 하우스배너 노출 기능 추가
+  - 프리패스 다중 프레임 기능 업데이트
 <br>
 
 ## 개발환경
@@ -32,7 +33,7 @@ allprojects {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-  implementation 'io.github.mobon:mobwithSDK:1.0.47' 
+  implementation 'io.github.mobon:mobwithSDK:1.0.48' 
 }
 ```
 
@@ -212,6 +213,47 @@ banner.loadAd();
 ### 4) destroyAd()
   본 함수를 호출하여 광고 객체들을 초기화 시켜줄 수 있습니다. 자동 갱신등이 설정된 경우 동작을 멈추게 됩니다.
   따라서 해당 배너뷰를 사용하지 않게 되는 경우 호출는 것을 권장 드립니다.
+
+
+### 5) 하우스 배너 사용
+  광고 로딩중 또는 광고가 없는 경우 하우스 배너를 노출 할 수 있습니다.  
+  setUseHouseBanner() 함수를 이용하여 하우스 배너 사용여부를 결정할 수 있으며, 기본값은 false 입니다.  
+  하우스 배너를 노출하는 경우 위 예시들과는 달리 광고 수신을 하기 전, 생성된 배너 객체를 View에 추가하실 필요가 있습니다. 
+  자세한 사용법은 아래를 참고 바랍니다.
+  ``` Java
+    MobWithBannerView banner = new MobwithBannerView(this)
+                                   .setBannerUnitId(YOUR_UNIT_ID)
+    //하우스 배너 사용 설정, 기본값은 false 입니다.
+    banner.setUseHouseBanner(true);
+
+    // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
+    banner_container.addView(banner);
+
+    // 배너뷰의 리스너를 등록합니다.
+    banner.setAdListener(new iBannerCallback() {
+      @Override
+      public void onLoadedAdInfo(boolean result, String errorcode) {
+        if (result) {
+          //배너 광고 로딩 성공
+          System.out.println("배너 광고로딩");
+
+        } else {
+          System.out.println("광고실패 : " + errorcode);
+          // 광고 로딩 실패시 동작
+        }
+      }
+
+      @Override
+      public void onAdClicked() {
+        System.out.println("광고클릭");
+      }
+      
+    });
+
+    // 광고를 호출합니다.
+    banner.loadAd();
+  ```
+  참고로, 하우스 배너를 사용하더라도 경우 한번 이라도 광고가 노출된 경우 하우스 배너는 표시되지 않습니다.
 
 <br>
 <br>
@@ -932,6 +974,7 @@ if (rewardVideoDialog.isLoaded()) {
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.48  |  MobwithBannerView 로딩중 하우스배너 노출 기능 추가, 프리패스 다중 프레임 기능 업데이트      |
  | 1.0.47  |  BugFix           |
  | 1.0.46  |  BugFix           |
  | 1.0.45  |  MobwithRewardVideoDialog 배너형 타입 추가 및 UI 수정            |
