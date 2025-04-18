@@ -5,7 +5,7 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 ## 최신 버전 및 변경사항
 - 최신버전 : 1.0.49
 - 변경사항
-  - 카테고리 타겟팅 & 디타겟팅 광고 송출 기능 추가
+  - 스마트 광고 (카테고리 타겟팅) 기능 추가
 <br>
 
 ## 개발환경
@@ -955,7 +955,8 @@ if (rewardVideoDialog.isLoaded()) {
 <br>
 MobwithBannerView, MobwithBannerWithArticleView, MobwithFreePassAdView, MobwithNativeAdView, EndingDialog, InterstitialDialog
 <br>
-예시)
+  
+
 ``` java
 /**
   업체코드 : 업체코드 값
@@ -995,7 +996,7 @@ MobwithBannerView banner = new MobwithBannerView(this)
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
- | 1.0.49  |  카테고리 타겟팅 & 디타겟팅 광고 송출 기능 업데이트|
+ | 1.0.49  |  스마트 광고(카테고리 타겟팅) 기능 업데이트|
  | 1.0.48  |  MobwithBannerView 로딩중 하우스배너 노출 기능 추가, 프리패스 다중 프레임 기능 업데이트      |
  | 1.0.47  |  BugFix           |
  | 1.0.46  |  BugFix           |
