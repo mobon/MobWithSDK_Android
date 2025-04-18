@@ -3,10 +3,9 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.48
+- 최신버전 : 1.0.49
 - 변경사항
-  - MobwithBannerView 로딩중 하우스배너 노출 기능 추가
-  - 프리패스 다중 프레임 기능 업데이트
+  - 카테고리 타겟팅 & 디타겟팅 광고 송출 기능 추가
 <br>
 
 ## 개발환경
@@ -73,7 +72,7 @@ android:usesCleartextTraffic="true"
 ## 4. Coupang SDK 추가
 - Gradle 설정
   - 먼저 프로젝트 단위의 Gradle에 아래를 참고하여 CoupangSDK를 가져오기 위한 저장소를 추가해줍니다.
-    ```XML
+    `````XML
     buildscript {
       ...
       repositories {
@@ -946,8 +945,30 @@ if (rewardVideoDialog.isLoaded()) {
 
 ```
 
+<br>
+<br>
 
-
+## 스마트 광고 (카테고리 타겟팅)
+카테고리 매핑을 통한 스마트 광고를 사용하시는 경우 setMobwithAdCategoryModel()를 통해서 카테고리 설정이 필요합니다.
+<br>
+- 기능 지원 View
+<br>
+MobwithBannerView, MobwithBannerWithArticleView, MobwithFreePassAdView, MobwithNativeAdView, EndingDialog, InterstitialDialog
+<br>
+예시)
+``` java
+/**
+  업체코드 : 업체코드 값
+  대분류코드 : 카테고리 분류 (대)
+  중분류코드 : 카테고리 분류 (중)
+  소분류코드 : 카테고리 분류 (소)
+*/
+MobwithAdCategoryModel model = new MobwithAdCategoryModel("업체코드", "대분류코드", "중분류코드", "소분류코드")
+MobwithBannerView banner = new MobwithBannerView(this)
+    .setBannerUnitId("YOUR_UNIT_ID")
+     //카테고리 데이터를 설정합니다.
+    .setMobwithAdCategoryModel(model);   
+```
 
 <br>
 <br>
@@ -974,6 +995,7 @@ if (rewardVideoDialog.isLoaded()) {
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.49  |  카테고리 타겟팅 & 디타겟팅 광고 송출 기능 업데이트|
  | 1.0.48  |  MobwithBannerView 로딩중 하우스배너 노출 기능 추가, 프리패스 다중 프레임 기능 업데이트      |
  | 1.0.47  |  BugFix           |
  | 1.0.46  |  BugFix           |
