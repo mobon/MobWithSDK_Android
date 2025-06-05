@@ -3,9 +3,11 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.49
+- 최신버전 : 1.0.50
 - 변경사항
-  - 스마트 광고 (카테고리 타겟팅) 기능 추가
+  - Pangle SDK 추가
+  - LevelPlay SDK Init 최적화
+  - 마이너 버그 수정
 <br>
 
 ## 개발환경
@@ -145,6 +147,19 @@ android:usesCleartextTraffic="true"
   IronSource(LevelPlay) SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
   ```java
   MobwithSDK.getInstance().setLevelPlayAppKey(this,"{ 전달 받은 AppKey }");
+  ```
+
+<br>
+<br>
+
+## 7. Pangle SDK 추가
+- Pangle 광고를 송출하기 위해 링크를 참고하여 주세요. (7.1.0.4 버전에 최적화 되어 있습니다.) <br>
+[Pangle SDK 바로가기](https://www.pangleglobal.com/kr/integration/integrate-pangle-sdk-for-android) 
+- Getting started와 Adnroid SDK Integration 항목을 참고 하시면 됩니다.
+- AppKey 설정  
+  Pangle SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
+  ```java
+  MobwithSDK.getInstance().setPangleAppKey("전달 받은 AppKey");
   ```
 
 
@@ -996,6 +1011,7 @@ MobwithBannerView banner = new MobwithBannerView(this)
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.50  |  Pangle SDK 추가, LevelPlay Init 로직 최적화|
  | 1.0.49  |  스마트 광고(카테고리 타겟팅) 기능 업데이트|
  | 1.0.48  |  MobwithBannerView 로딩중 하우스배너 노출 기능 추가, 프리패스 다중 프레임 기능 업데이트      |
  | 1.0.47  |  BugFix           |
