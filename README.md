@@ -161,6 +161,19 @@ android:usesCleartextTraffic="true"
   ```java
   MobwithSDK.getInstance().setPangleAppKey("전달 받은 AppKey");
   ```
+- 주의사항
+  외부 미디에이션 사용 시 라이브러리 간 충돌이 발생할 수 있습니다.
+  아래의 미디에이션이 implementation 되어있으면 해당 라이브러리는 충돌이 발생하니 제거해주시기 바랍니다.
+  ```java
+  implementation 'com.adop.sdk.adapter:pangle:5.2.1.1.3'
+  implementation 'com.adop.sdk.partners:admobbidding:1.0.2'
+  ```
+  implementation된 라이브러리의 dependency의 Pangle 관련 라이브러리가 있으면 충돌이 발생할 수 있으니 관련해서 협의 바랍니다.
+
+  - 라이브러리 충돌 확인 방법
+  1. 안드로이드 스튜디오 -> 터미널 -> .\gradlew app:dependencies --configuration debugRuntimeClasspath 입력
+  2. 결과 로그에서 "(*)", "->", "conflict", "requested" 같은 키워드는 중복되었다는 의미
+  3. 중복된 implementation 제거
 
 
 <br>
