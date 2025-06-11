@@ -31,6 +31,9 @@
 # OkHttp platform used only on JVM and when Conscrypt dependency is available.
 -dontwarn com.httpmodule.internal.platform.ConscryptPlatform
 
+#외부 SDK를 전혀 사용하지 않는 경우 SDK 내의 adapter class 내에서 외부 SDK 사용으로 인한 충돌 방지
+-dontwarn com.mobwith.adapters.**
+
 -keep public class com.httpmodule.** { public *;}
 -keep public class com.mobwith.** { *; }
 -keep public class androidx.** { *; }
