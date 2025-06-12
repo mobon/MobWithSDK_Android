@@ -3,11 +3,9 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.50
+- 최신버전 : 1.0.51
 - 변경사항
-  - Pangle SDK 추가
-  - LevelPlay SDK Init 최적화
-  - 마이너 버그 수정
+  - 가이드 및 버그 수정
 <br>
 
 ## 개발환경
@@ -1024,6 +1022,7 @@ MobwithBannerView banner = new MobwithBannerView(this)
 # MobWith Android SDK Release History
  | version |        Description        |
  | :-----: | :------------------------ |
+ | 1.0.51  |  BugFix           |
  | 1.0.50  |  Pangle SDK 추가, LevelPlay Init 로직 최적화|
  | 1.0.49  |  스마트 광고(카테고리 타겟팅) 기능 업데이트|
  | 1.0.48  |  MobwithBannerView 로딩중 하우스배너 노출 기능 추가, 프리패스 다중 프레임 기능 업데이트      |
