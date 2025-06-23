@@ -3,9 +3,10 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.52
+- 최신버전 : 1.0.53
 - 변경사항
-  - 가이드 및 버그 수정
+  - Banner FullScreen Mode 기능 추가
+  - Interstitial, Reward 안드로이드 15 UI 대응
 <br>
 
 ## 개발환경
@@ -280,9 +281,31 @@ banner.loadAd();
   ```
   참고로, 하우스 배너를 사용하더라도 경우 한번 이라도 광고가 노출된 경우 하우스 배너는 표시되지 않습니다.
 
-<br>
-<br>
 
+### 6) FullScreen 배너 사용
+  배너 광고 사용 중 배너 크기를 꽉 채우고 싶을 때 사용할 수 있습니다.  
+  MobwithSDK.getInstance().setFullScreenMode() 함수를 이용하여 Full Screen 배너 사용여부를 결정할 수 있으며, 기본값은 false 입니다.
+  주의사항 : FullScreenMode를 사용하기 위해선 배너 광고가 들어갈 container view의 높이를 원하는 크기로 커스텀 해야합니다.
+  자세한 사용법은 아래를 참고 바랍니다.
+  ``` Java
+  MobwithSDK.getInstance().setFullScreenMode(true); //true : Full Screen Model
+  
+  ....
+<LinearLayout
+  android:id="@+id/banner_container"
+  android:layout_width="match_parent"
+  android:layout_height="61dp"      //높이를 원하는 사이즈로 설정
+  android:layout_alignParentBottom="true"
+  android:layout_centerHorizontal="true"
+  android:gravity="center"
+  android:orientation="vertical"
+  />
+  ....
+  ```
+
+
+<br>
+<br>
 
 ## 광고뷰의 크기 설정
 광고의 크기는 노출되는 광고의 크기에 따라 자동으로 변경됩니다.  
@@ -1020,67 +1043,67 @@ MobwithBannerView banner = new MobwithBannerView(this)
 <br>
 <br>
 
-
 # MobWith Android SDK Release History
- | version |        Description        |
- | :-----: | :------------------------ |
- | 1.0.52  |  BugFix           |
- | 1.0.51  |  BugFix           |
- | 1.0.50  |  Pangle SDK 추가, LevelPlay Init 로직 최적화|
- | 1.0.49  |  스마트 광고(카테고리 타겟팅) 기능 업데이트|
- | 1.0.48  |  MobwithBannerView 로딩중 하우스배너 노출 기능 추가, 프리패스 다중 프레임 기능 업데이트      |
- | 1.0.47  |  BugFix           |
- | 1.0.46  |  BugFix           |
- | 1.0.45  |  MobwithRewardVideoDialog 배너형 타입 추가 및 UI 수정            |
- | 1.0.44  |  BugFix           |
- | 1.0.43  |  MobwithRewardVideoDialog 기능 및 UI 개선           |
- | 1.0.42  |  BugFix           |
- | 1.0.41  |  MobwithWhoWhoPointBannerBridge 기능 수정           |
- | 1.0.40  |  후후 간편적립 배너를 위한 MobwithWhoWhoPointBannerBridge 추가           |
- | 1.0.39  |  전면, 엔딩, 리워드 등 전체화면을 띄우는 광고에 onFailOpened() 콜백 추가.           |
- | 1.0.38  |  BugFix           |
- | 1.0.37  |  LevelPlay(IronSource) SDK의 사용이 강제되는 문제 수정 |
- | 1.0.36  |  MobwithRewardVideoDialog 추가 |
- | 1.0.35  |  Unity Ads SDK, LevelPlay(IronSource) SDK 추가 |
- | 1.0.34  |  MobwithPointBannerView, MobwithMultiPointBannerView 추가 |
- | 1.0.33  |  Coupang SDK의 NativeAd 기능 추가 |
- | 1.0.32  |  BugFix           |
- | 1.0.31  |  BugFix           |
- | 1.0.30  |  BugFix           |
- | 1.0.29  |  BugFix           |
- | 1.0.28  |  BugFix           |
- | 1.0.27  |  BugFix, AdMob 버전 교체           |
- | 1.0.26  |  MobwithFreePassAdView 추가           |
- | 1.0.25  |  BugFix           |
- | 1.0.23  |  BugFix           |
- | 1.0.22  |  BugFix           |
- | 1.0.21  |  Coupang SDK 추가, Bug Fix  |
- | 1.0.20  |  BugFix           |
- | 1.0.19  |  BugFix           |
- | 1.0.18  |  BugFix           |
- | 1.0.17  |  BannerWithArticleView 추가     |
- | 1.0.16  |  AppLovin 제거, AdFit SDK 버전 업데이트     |
- | 1.0.15  |  BugFix           |
- | 1.0.14  |  BugFix           |
- | 1.0.13  |  BugFix           |
- | 1.0.12  |  BugFix           |
- | 1.0.11  |  BugFix           |
- | 1.0.10  |  ADOP, AdFit배너 광고 연동 추가 및 광고 지원 타입 추가  |
- | 1.0.9   |  BugFix           |
- | 1.0.8   |  BugFix           |
- | 1.0.7   |  MobwithBannerView 자동갱신 기능 추가           |
- | 1.0.6   |  BugFix           |
- | 1.0.5   |  뉴스피드 배너 MobwithArticleBannerView 추가 |
- | 1.0.4   |  BugFix           |
- | 1.0.3   |  BugFix           |
- | 1.0.2   |  BugFix           |
- | 1.0.0   |  BugFix           |
- | 0.9.14  |  BugFix           |
- | 0.9.13  |  BugFix           |
- | 0.9.12  |  BugFix           |
- | 0.9.11  |  전면/엔딩배너, 배너 사이즈(320x100) 추가 |
- | 0.9.10  |  MobwithNativeAdLoader 추가 |
- | 0.9.9   |  BugFix           |
- | 0.9.7   |  MobwithNativeADView 추가  |
- | 0.9.6   |  appLovin 연동 추가     |
- | 0.9.2   |  first Release        |
+ | version | Description                                               |
+ |:-------:|:----------------------------------------------------------|
+ | 1.0.53  | Banner FullScreen Mode 기능 추가, Interstitial, Reward 안드로이드 15 UI 대응 |
+ | 1.0.52  | BugFix                                                    |
+ | 1.0.51  | BugFix                                                    |
+ | 1.0.50  | Pangle SDK 추가, LevelPlay Init 로직 최적화                      |
+ | 1.0.49  | 스마트 광고(카테고리 타겟팅) 기능 업데이트                                  |
+ | 1.0.48  | MobwithBannerView 로딩중 하우스배너 노출 기능 추가, 프리패스 다중 프레임 기능 업데이트 |
+ | 1.0.47  | BugFix                                                    |
+ | 1.0.46  | BugFix                                                    |
+ | 1.0.45  | MobwithRewardVideoDialog 배너형 타입 추가 및 UI 수정                |
+ | 1.0.44  | BugFix                                                    |
+ | 1.0.43  | MobwithRewardVideoDialog 기능 및 UI 개선                       |
+ | 1.0.42  | BugFix                                                    |
+ | 1.0.41  | MobwithWhoWhoPointBannerBridge 기능 수정                      |
+ | 1.0.40  | 후후 간편적립 배너를 위한 MobwithWhoWhoPointBannerBridge 추가          |
+ | 1.0.39  | 전면, 엔딩, 리워드 등 전체화면을 띄우는 광고에 onFailOpened() 콜백 추가.         |
+ | 1.0.38  | BugFix                                                    |
+ | 1.0.37  | LevelPlay(IronSource) SDK의 사용이 강제되는 문제 수정                 |
+ | 1.0.36  | MobwithRewardVideoDialog 추가                               |
+ | 1.0.35  | Unity Ads SDK, LevelPlay(IronSource) SDK 추가               |
+ | 1.0.34  | MobwithPointBannerView, MobwithMultiPointBannerView 추가    |
+ | 1.0.33  | Coupang SDK의 NativeAd 기능 추가                               |
+ | 1.0.32  | BugFix                                                    |
+ | 1.0.31  | BugFix                                                    |
+ | 1.0.30  | BugFix                                                    |
+ | 1.0.29  | BugFix                                                    |
+ | 1.0.28  | BugFix                                                    |
+ | 1.0.27  | BugFix, AdMob 버전 교체                                       |
+ | 1.0.26  | MobwithFreePassAdView 추가                                  |
+ | 1.0.25  | BugFix                                                    |
+ | 1.0.23  | BugFix                                                    |
+ | 1.0.22  | BugFix                                                    |
+ | 1.0.21  | Coupang SDK 추가, Bug Fix                                   |
+ | 1.0.20  | BugFix                                                    |
+ | 1.0.19  | BugFix                                                    |
+ | 1.0.18  | BugFix                                                    |
+ | 1.0.17  | BannerWithArticleView 추가                                  |
+ | 1.0.16  | AppLovin 제거, AdFit SDK 버전 업데이트                            |
+ | 1.0.15  | BugFix                                                    |
+ | 1.0.14  | BugFix                                                    |
+ | 1.0.13  | BugFix                                                    |
+ | 1.0.12  | BugFix                                                    |
+ | 1.0.11  | BugFix                                                    |
+ | 1.0.10  | ADOP, AdFit배너 광고 연동 추가 및 광고 지원 타입 추가                      |
+ |  1.0.9  | BugFix                                                    |
+ |  1.0.8  | BugFix                                                    |
+ |  1.0.7  | MobwithBannerView 자동갱신 기능 추가                              |
+ |  1.0.6  | BugFix                                                    |
+ |  1.0.5  | 뉴스피드 배너 MobwithArticleBannerView 추가                       |
+ |  1.0.4  | BugFix                                                    |
+ |  1.0.3  | BugFix                                                    |
+ |  1.0.2  | BugFix                                                    |
+ |  1.0.0  | BugFix                                                    |
+ | 0.9.14  | BugFix                                                    |
+ | 0.9.13  | BugFix                                                    |
+ | 0.9.12  | BugFix                                                    |
+ | 0.9.11  | 전면/엔딩배너, 배너 사이즈(320x100) 추가                               |
+ | 0.9.10  | MobwithNativeAdLoader 추가                                  |
+ |  0.9.9  | BugFix                                                    |
+ |  0.9.7  | MobwithNativeADView 추가                                    |
+ |  0.9.6  | appLovin 연동 추가                                            |
+ |  0.9.2  | first Release                                             |
