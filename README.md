@@ -3,9 +3,9 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.54
+- 최신버전 : 1.0.55
 - 변경사항
-  - Bugfix
+  - 안드로이드 15 스테이터스바와 광고 화면이 겹치는 현상 수정
 <br>
 
 ## 개발환경
@@ -1045,6 +1045,7 @@ MobwithBannerView banner = new MobwithBannerView(this)
 # MobWith Android SDK Release History
  | version | Description                                               |
  |:-------:|:----------------------------------------------------------|
+ | 1.0.55  | BugFix                                                    |
  | 1.0.54  | BugFix                                                    |
  | 1.0.53  | Banner FullScreen Mode 기능 추가, Interstitial, Reward 안드로이드 15 UI 대응 |
  | 1.0.52  | BugFix                                                    |
