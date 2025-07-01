@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.enliple.mobmixersdk">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="BIND_GET_INSTALL_REFERRER_SERVICE" />
     <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
     <application
-        android:name=".GlobalApplication"
+        android:name="com.enliple.mobmixersdk.GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,7 +16,7 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.enliple.mobmixersdk.ui.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,17 +25,46 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".NativeAdViewTestActivity"
-            android:exported="false" />
+        <activity android:name="com.enliple.mobmixersdk.ui.BannerViewActivity"
+            android:exported="false"/>
 
-        <activity
-            android:name=".NativeAdLoaderTestActivity"
-            android:exported="false" />
+        <activity android:name="com.enliple.mobmixersdk.ui.BannerArticleViewActivity"
+            android:exported="false"/>
+
+
+        <activity android:name="com.enliple.mobmixersdk.ui.InterstitialAdActivity"
+            android:exported="false"/>
+
+
+
+        <activity android:name="com.enliple.mobmixersdk.ui.EndingAdActivity"
+            android:exported="false"/>
+
+
+        <activity android:name="com.enliple.mobmixersdk.ui.NativeAdActivity"
+            android:exported="false"/>
+
+        <activity android:name="com.enliple.mobmixersdk.ui.NativeAdLoaderActivity"
+            android:exported="false"/>
+
+        <activity android:name="com.enliple.mobmixersdk.ui.FreePassAdActivity"
+            android:exported="false"/>
+
+        <activity android:name="com.enliple.mobmixersdk.ui.RewardAdActivity"
+            android:exported="false"/>
+
+        <activity android:name="com.enliple.mobmixersdk.ui.PointBannerActivity"
+            android:exported="false"/>
+
 
         <meta-data
             android:name="applovin.sdk.key"
             android:value="cyOmFZkTu_mdxFtH7wD1RVxBwy4Z_NEa6rF5czSgSulvk-DJfrF3-ymxsWhEgUQhDpC1dTwLKR3G8ntO-2uCaT"/>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8397236892424945~1553929903" />
+
 <!--        <meta-data-->
 <!--            android:name="applovin.sdk.key"-->
 <!--            android:value="KnkiNki9COTyeQrLAbTXdhThi2rOpl0NZJmxeW46TngyOPnnEe2J6dk_ekkCDoow2rFV1hgMasEHlhqTHT-s9i" />-->
