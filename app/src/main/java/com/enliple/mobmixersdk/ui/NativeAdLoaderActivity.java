@@ -1,61 +1,83 @@
-package com.enliple.mobmixersdk;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.enliple.mobmixersdk.ui;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.mobwith.manager.LogPrint;
+import com.mobwith.sdk.R;
+import com.mobwith.sdk.databinding.ActivityNativeAdLoaderBinding;
 import com.mobwith.sdk.loader.MobwithNativeAdLoader;
 import com.mobwith.sdk.loader.iNativeBannerCallback;
+import com.mobwith.sdk.models.MobwithAdCategoryModel;
 
+public class NativeAdLoaderActivity extends BaseActivity<ActivityNativeAdLoaderBinding>{
 
-
-public class NativeAdLoaderTestActivity extends AppCompatActivity {
-
-
+    /*
+     * 1. MW_쿠차_APP_네이티브_320*250_AOS_테스트1 (모비위드) 10882166
+     * 2. MW_쿠차_APP_네이티브_320*250_AOS_테스트2 (모비위드) 10882167
+     * 3. MW_쿠차_APP_네이티브_320*250_AOS_테스트3 (모비위드) 10882168
+     * 4. MW_쿠차_APP_네이티브_320*250_AOS_테스트4 (모비위드) 10882169
+     * */
     String[] adUnitIDs = new String[] {
-            "YOUR_UNIT_ID1",
-            "YOUR_UNIT_ID2"
+            "10882166",
+            "10882167",
+            "10882168",
+            "10882169"
     };
 
     MobwithNativeAdLoader adLoader;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_native_ad_loader_test);
+    protected int getLayoutResId() {
+        return R.layout.activity_native_ad_loader;
+    }
 
-        findViewById(R.id.buttonBack).setOnClickListener( v -> {
-            finish();
+    @Override
+    protected void initView() {
+        binding.toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getOnBackPressedDispatcher().onBackPressed();
+            }
         });
 
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = binding.nativeLoaderRecycler;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new SampleAdapter());
+    }
+
+    @Override
+    protected void initData() {
 
     }
 
-    public MobwithNativeAdLoader getAdLoader() {
+    @Override
+    public void finish() {
+        super.finish();
+        getAdLoader().destroyAllAd();
+    }
+
+    private MobwithNativeAdLoader getAdLoader() {
 
         if (adLoader == null) {
             adLoader = new MobwithNativeAdLoader(this, adUnitIDs);
+            adLoader.setMobwithAdCategoryModel(new MobwithAdCategoryModel("","A0001","B0001","C0001"));
             adLoader.setAdListener(new iNativeBannerCallback() {
 
                 @Override
                 public void onLoadedAd(int index, boolean result, String errorStr) {
                     LogPrint.d("[AD Loader] callback : [index] " + index + " [result] " + result + " [msg] " + errorStr);
                     if (result) {
-                        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
-//                        recyclerView.getAdapter().notifyDataSetChanged();
+                        RecyclerView recyclerView = binding.nativeLoaderRecycler;
+                        assert recyclerView.getAdapter() != null;
                         recyclerView.getAdapter().notifyItemChanged(index);
                     }
                 }
@@ -67,7 +89,7 @@ public class NativeAdLoaderTestActivity extends AppCompatActivity {
             });
 
             adLoader.setNativeADView(this,
-                    R.layout.custom_native_ad_view,
+                    R.layout.example_native_ad_view,
                     R.id.mediaContainerView,
                     R.id.imageViewAD,
                     R.id.imageViewLogo,
@@ -80,22 +102,6 @@ public class NativeAdLoaderTestActivity extends AppCompatActivity {
 
         return adLoader;
     }
-
-
-
-    void loadAd() {
-        ViewGroup adView = getAdLoader().loadAD(NativeAdLoaderTestActivity.this, 0);
-        ((FrameLayout) findViewById(R.id.adview_container)).addView(adView);
-    }
-
-
-    @Override
-    public void finish() {
-        super.finish();
-
-        getAdLoader().destroyAllAd();
-    }
-
     class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.ViewHolder> {
 
         class ViewHolder extends RecyclerView.ViewHolder {
@@ -123,7 +129,7 @@ public class NativeAdLoaderTestActivity extends AppCompatActivity {
                 frameLayout.removeAllViews();
                 frameLayout.setVisibility(View.VISIBLE);
 
-                ViewGroup adView = getAdLoader().loadAD(NativeAdLoaderTestActivity.this, index);
+                ViewGroup adView = getAdLoader().loadAD(NativeAdLoaderActivity.this, index);
                 if (adView != null && getAdLoader().isLoadedAd(index) ) {
                     textView1.setBackgroundColor(0x00000000);
                     frameLayout.addView(adView);
@@ -171,6 +177,4 @@ public class NativeAdLoaderTestActivity extends AppCompatActivity {
             return 500;
         }
     }
-
-
 }

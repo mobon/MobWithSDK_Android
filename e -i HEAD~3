@@ -1,0 +1,117 @@
+[33m869123b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mrefactory[m[33m)[m refactoring: 1.0.2 샘플 앱 리팩토링
+[33m2bf247b[m refactoring: 1.0.2 샘플 앱 리팩토링
+[33mf2a2ef9[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m update: 1.0.55 업데이트 (bugfix) - 안드로이드 15 스테이터스바와 광고 화면이 겹치는 현상 수정
+[33m49025ba[m update: 1.0.54 업데이트 (bugfix)   - AdapterObject가 간헐적으로 nullpoint exception이 발생하는 현상 수정
+[33md61e745[m update: 1.0.53 업데이트 (bugfix)   - Banner FullScreen Mode 기능 추가   - Interstitial, Reward 안드로이드 15 UI 대응
+[33me17c9e9[m update: 1.0.52 업데이트 (bugfix)  - 리워드 광고 시 onOpened 중복 호출되는 현상 수정  - 다른 광고 SDK 사용시 리워드 광고의 로그가 노출되는 현상 수정
+[33m04816bf[m update: 1.0.51 업데이트 (bugfix)  - Pangle Native 광고 안나오는 현상 수정  - 전면, 엔딩 Close Event 추가
+[33m0a4ed3a[m update: 1.0.50 업데이트 (proguard 수정)  - dontwarn com.mobwith.adapters.**
+[33m2b79971[m update: 1.0.50 업데이트 (md 수정) - Pangle 라이브러리 충돌 주의사항 추가
+[33me48a5bc[m update: 1.0.50 업데이트 (md 수정)
+[33m24b5949[m update: 1.0.50 업데이트 (md 수정)
+[33m5474468[m update: 1.0.49 업데이트 (md 수정)
+[33mefa37e6[m update: 1.0.49 업데이트 (md 수정)
+[33mf8eaeb4[m Update README.md
+[33mb5d6a7c[m Update README.md
+[33m355b44d[m update README.md
+[33m01f8888[m Update README.md
+[33mc6620e7[m Update README.md
+[33m70a880c[m Update README.md
+[33m472ef5a[m Update README.md
+[33mf3ddb3f[m Update README.md
+[33ma8cbf4f[m update README.md
+[33mf70b375[m Update README.md
+[33mc641de9[m Update README.md
+[33mdc6812e[m Update README.md
+[33md0c9b91[m Update README.md
+[33md225c73[m Update README.md
+[33m0523b02[m Update README.md
+[33mb2a2851[m Update README.md
+[33m68a9193[m Update README.md
+[33m7d74592[m Update README.md
+[33m3cc06d2[m Update LICENSE
+[33m3b9b1ee[m Update README.md
+[33mda29862[m update README.md
+[33mc75a246[m Update README.md
+[33m66b3d6e[m Update README.md
+[33m0d1ed7d[m Update README.md
+[33m96c6268[m Update README.md
+[33m76e5006[m Update README.md
+[33mc82e6e3[m Update README.md
+[33mcd72127[m Update README.md
+[33m3173367[m Update README.md
+[33mb3fdbc8[m Update README.md
+[33mac98302[m Update README.md
+[33m7130c28[m Update README.md
+[33mca5f05c[m Update README.md
+[33m37d37c9[m Update READMD.md
+[33m73a8b91[m Update README.md
+[33meb82dc5[m Update README.md
+[33m66aa481[m Update README.md
+[33mf0148bb[m Update README.md
+[33m51e4a7e[m update README.md
+[33m31f34cd[m Update README.md
+[33m96bb2b2[m update README.md
+[33md5c0be2[m update README.md
+[33m71679b9[m Update README.md
+[33m18f0e25[m Update README.md
+[33m587fe53[m Update README.md
+[33m866e787[m update README.md
+[33m9c8d67d[m Update README.md
+[33mda80c54[m Update README.md
+[33m179f044[m Update README.md
+[33m3a74eb2[m Update README.md
+[33m0ab6cce[m update README.md
+[33m1487470[m Update README.md
+[33m606f9e6[m Update README.md
+[33m52ce51a[m Update README.md
+[33mdfabb1f[m Update ReadME.md
+[33mb47e310[m Update ReadME.md
+[33mf2204a6[m Update README.md
+[33mab38b7d[m Update README.md
+[33m2b500a3[m 추가 기능에 대한 샘플 코드 추가 및 README.md 파일 업데이트
+[33m7b04139[m Feat: Update Sample source
+[33m0d9d95a[m Feat: Update 0.9.10
+[33md56d53c[m Feat. Update README.md
+[33m29548c3[m Feat: Update README.md
+[33mfdad071[m Feat: update README.md
+[33mb3a794a[m[33m ([m[1;33mtag: [m[1;33m0.9.7[m[33m)[m 신규 버전 적용
+[33mb2177a0[m Feat: Update Version 0.9.7
+[33m3abefe1[m Fix: README.md
+[33m09bab95[m update README.md
+[33mf50797d[m Update README.md
+[33m66ff301[m Update build.gradle
+[33mb87784e[m Update README.md
+[33m3f6151e[m Update build.gradle
+[33ma191320[m Update README.md
+[33m3763adf[m Update README.md
+[33m87032f5[m Update build.gradle
+[33m56ae2c6[m Update build.gradle
+[33m1a0f48f[m Update README.md
+[33m2370f45[m Update README.md
+[33m9355f00[m Update README.md
+[33mb0354f5[m Update README.md
+[33mff3ed24[m Update build.gradle
+[33m683b608[m Update README.md
+[33m89bedaa[m Update README.md
+[33ma15f718[m Update README.md
+[33me424dff[m Update README.md
+[33m38b803a[m Update README.md
+[33mf47b7f5[m Update README.md
+[33m70d9c6c[m Update README.md
+[33m8fb6bff[m Update README.md
+[33meae8b10[m Update README.md
+[33me43ee00[m Update README.md
+[33m308675a[m Update proguard-rules.pro
+[33mec39375[m Update README.md
+[33m63ab952[m Update README.md
+[33m602ae99[m Update README.md
+[33m67da821[m Update build.gradle
+[33m411b56d[m Update build.gradle
+[33m90eb9ad[m Update MainActivity.java
+[33mffb5795[m Delete app/src/test/java/com/enliple/mobmixersdk directory
+[33mbf1b098[m Delete app/src/androidTest/java/com/enliple/mobmixersdk directory
+[33me509c22[m Update build.gradle
+[33m09a7f2b[m Update README.md
+[33m4d280ec[m Add files via upload
+[33maf09b2d[m Initial commit

@@ -1,177 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <!--    android:background="@color/material_on_primary_emphasis_high_type"-->
-
-    <TextView
-        android:id="@+id/textViewUnitID"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:text="Unit ID :"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:gravity="center_vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        />
-    <EditText
-        android:id="@+id/editTextAdUnitID"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textViewUnitID"
-        app:layout_constraintBottom_toBottomOf="@id/textViewUnitID"
-        app:layout_constraintLeft_toRightOf="@id/textViewUnitID"
-        />
-
-    <Button
-        android:id="@+id/buttonLoadBannerAD"
-        android:text="320x50"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintTop_toBottomOf="@id/textViewUnitID"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/buttonLoadBanner100AD"
-        app:layout_constraintHorizontal_weight="1"
-        tools:ignore="MissingConstraints"
-        />
-
-    <Button
-        android:id="@+id/buttonLoadBanner100AD"
-        android:text="320x100"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        app:layout_constraintTop_toTopOf="@id/buttonLoadBannerAD"
-        app:layout_constraintBottom_toBottomOf="@id/buttonLoadBannerAD"
-        app:layout_constraintLeft_toRightOf="@id/buttonLoadBannerAD"
-        app:layout_constraintRight_toLeftOf="@id/buttonLoadSquareAD"
-        app:layout_constraintHorizontal_weight="1"
-        tools:ignore="MissingConstraints"
-        />
-
-    <Button
-        android:id="@+id/buttonLoadSquareAD"
-        android:text="300x250"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintTop_toTopOf="@id/buttonLoadBannerAD"
-        app:layout_constraintBottom_toBottomOf="@id/buttonLoadBannerAD"
-        app:layout_constraintLeft_toRightOf="@id/buttonLoadBanner100AD"
-        app:layout_constraintRight_toLeftOf="@id/buttonNextAd"
-        app:layout_constraintHorizontal_weight="1"
-        tools:ignore="MissingConstraints"
-        />
-
-    <Button
-        android:id="@+id/buttonNextAd"
-        android:text="Next Ad"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintTop_toTopOf="@id/buttonLoadBannerAD"
-        app:layout_constraintBottom_toBottomOf="@id/buttonLoadBannerAD"
-        app:layout_constraintLeft_toRightOf="@id/buttonLoadSquareAD"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_weight="1"
-        tools:ignore="MissingConstraints"
-        />
-
-
-
-
-    <LinearLayout
-        android:id="@+id/banner_container"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:background="@color/teal_200"
-        android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@id/buttonLoadBannerAD"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/buttonNativeAdViewTest"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="NativeAdView"
-        android:textSize="16dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintVertical_weight="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/buttonNativeAdLoaderTest"
-        app:layout_constraintBottom_toTopOf="@id/buttonInterstitail"/>
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="MobWith"
+            app:titleTextColor="@android:color/white">
 
-    <Button
-        android:id="@+id/buttonNativeAdLoaderTest"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="NativeAdLoader"
-        android:textSize="16dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="10dp"
-        app:layout_constraintVertical_weight="1"
-        app:layout_constraintLeft_toRightOf="@id/buttonNativeAdViewTest"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonInterstitail" />
+        </com.google.android.material.appbar.MaterialToolbar>
 
-    <Button
-        android:id="@+id/buttonInterstitail"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="전면배너"
-        android:textSize="16dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/buttonInterstitailFull"
-        app:layout_constraintBottom_toBottomOf="parent" />
-    <Button
-        android:id="@+id/buttonInterstitailFull"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="전면배너(FULL)"
-        android:textSize="16dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintLeft_toRightOf="@id/buttonInterstitail"
-        app:layout_constraintRight_toLeftOf="@id/buttonEdningDialog"
-        app:layout_constraintBottom_toBottomOf="parent" />
-    <Button
-        android:id="@+id/buttonEdningDialog"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:text="엔딩"
-        android:textSize="16dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintLeft_toRightOf="@id/buttonInterstitailFull"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:text="BANNER">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btnArticleBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:text="ARTICLE_BANNER">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btnInterstitial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:text="전면배너">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btnEnding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:text="엔딩(ENDING)">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btnNative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:text="NATIVE VIEW">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btnNativeLoader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:text="NATIVE LOADER VIEW">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btnFreePassView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:text="FREEPASS AD VIEW">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btnRewardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:text="REWARD AD VIEW">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btnPointAd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="12dp"
+                    android:text="POINT AD">
+
+                </Button>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
