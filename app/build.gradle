@@ -52,7 +52,7 @@ dependencies {
     //Mobwith SDK 라이브러리 추가
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.55'
+    implementation 'io.github.mobon:mobwithSDK:1.0.58'
 
 
     implementation "com.applovin:applovin-sdk:11.8.2"
