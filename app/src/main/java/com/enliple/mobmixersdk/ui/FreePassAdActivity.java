@@ -13,11 +13,11 @@ import com.enliple.mobmixersdk.utils.LogUtil;
 import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.manager.SpManager;
 import com.mobwith.sdk.MobwithFreePassAdView;
-import com.mobwith.sdk.R;
 import com.mobwith.sdk.callback.iFreePassBannerCallback;
 import com.mobwith.sdk.custom.freepass.MobwithFreePassViewModel;
-import com.mobwith.sdk.databinding.ActivityFreePassAdBinding;
 import com.mobwith.sdk.models.MobwithAdCategoryModel;
+import com.mobwith.sdk.R;
+import com.mobwith.sdk.databinding.ActivityFreePassAdBinding;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

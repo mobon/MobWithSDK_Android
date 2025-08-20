@@ -6,8 +6,8 @@ import android.widget.Toast;
 import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.manager.LogPrint;
 import com.mobwith.sdk.MobwithRewardVideoDialog;
-import com.mobwith.sdk.R;
 import com.mobwith.sdk.callback.iRewardAdsCallback;
+import com.mobwith.sdk.R;
 import com.mobwith.sdk.databinding.ActivityRewardAdBinding;
 
 public class RewardAdActivity extends BaseActivity<ActivityRewardAdBinding> {

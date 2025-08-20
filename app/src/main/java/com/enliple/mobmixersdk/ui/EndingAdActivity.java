@@ -12,10 +12,10 @@ import com.enliple.mobmixersdk.utils.LogUtil;
 import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.sdk.EndingDialog;
 import com.mobwith.sdk.Key;
-import com.mobwith.sdk.R;
 import com.mobwith.sdk.callback.iInterstitialCallback;
-import com.mobwith.sdk.databinding.ActivityEndingAdBinding;
 import com.mobwith.sdk.models.MobwithAdCategoryModel;
+import com.mobwith.sdk.R;
+import com.mobwith.sdk.databinding.ActivityEndingAdBinding;
 
 public class EndingAdActivity extends BaseActivity<ActivityEndingAdBinding>{
 

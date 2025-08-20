@@ -9,10 +9,10 @@ import com.enliple.mobmixersdk.utils.LogUtil;
 import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.MobwithSDK;
 import com.mobwith.sdk.MobwithBannerView;
-import com.mobwith.sdk.R;
 import com.mobwith.sdk.callback.iBannerCallback;
-import com.mobwith.sdk.databinding.ActivityBannerViewBinding;
 import com.mobwith.sdk.models.MobwithAdCategoryModel;
+import com.mobwith.sdk.R;
+import com.mobwith.sdk.databinding.ActivityBannerViewBinding;
 
 public class BannerViewActivity extends BaseActivity<ActivityBannerViewBinding> {
 

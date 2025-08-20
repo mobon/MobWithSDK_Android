@@ -9,10 +9,10 @@ import android.widget.Toast;
 import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.manager.LogPrint;
 import com.mobwith.sdk.MobwithNativeAdView;
-import com.mobwith.sdk.R;
 import com.mobwith.sdk.callback.iBannerCallback;
-import com.mobwith.sdk.databinding.ActivityNativeAdBinding;
 import com.mobwith.sdk.models.MobwithAdCategoryModel;
+import com.mobwith.sdk.R;
+import com.mobwith.sdk.databinding.ActivityNativeAdBinding;
 
 public class NativeAdActivity extends BaseActivity<ActivityNativeAdBinding>{
 

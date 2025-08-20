@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobwith.manager.LogPrint;
-import com.mobwith.sdk.R;
-import com.mobwith.sdk.databinding.ActivityNativeAdLoaderBinding;
 import com.mobwith.sdk.loader.MobwithNativeAdLoader;
 import com.mobwith.sdk.loader.iNativeBannerCallback;
 import com.mobwith.sdk.models.MobwithAdCategoryModel;
+import com.mobwith.sdk.R;
+import com.mobwith.sdk.databinding.ActivityNativeAdLoaderBinding;
 
 public class NativeAdLoaderActivity extends BaseActivity<ActivityNativeAdLoaderBinding>{
 

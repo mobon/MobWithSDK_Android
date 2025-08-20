@@ -111,5 +111,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
          * 전달 받은 PangleAppKey 설정
          */
 //        MobwithSDK.getInstance().setPangleAppKey();
+        /**
+         * TODO: DT Exchange SDK 설정
+         * 전달 받은 DT Exchange AppKey 설정
+         */
+        MobwithSDK.getInstance().setDTExChangeAppKey("206620");
     }
 }

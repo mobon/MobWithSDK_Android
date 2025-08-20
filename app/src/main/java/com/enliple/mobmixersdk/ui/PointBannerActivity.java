@@ -5,8 +5,8 @@ import android.view.View;
 import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.manager.LogPrint;
 import com.mobwith.sdk.MobwithMultiPointBannerView;
-import com.mobwith.sdk.R;
 import com.mobwith.sdk.callback.iMultiPointBannerCallback;
+import com.mobwith.sdk.R;
 import com.mobwith.sdk.databinding.ActivityPointBannerBinding;
 
 public class PointBannerActivity extends BaseActivity<ActivityPointBannerBinding>{

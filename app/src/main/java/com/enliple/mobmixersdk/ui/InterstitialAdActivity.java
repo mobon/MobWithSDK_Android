@@ -12,10 +12,10 @@ import com.enliple.mobmixersdk.utils.LogUtil;
 import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.sdk.InterstitialDialog;
 import com.mobwith.sdk.Key;
-import com.mobwith.sdk.R;
 import com.mobwith.sdk.callback.iInterstitialCallback;
-import com.mobwith.sdk.databinding.ActivityInterstitialAdBinding;
 import com.mobwith.sdk.models.MobwithAdCategoryModel;
+import com.mobwith.sdk.R;
+import com.mobwith.sdk.databinding.ActivityInterstitialAdBinding;
 
 public class InterstitialAdActivity extends BaseActivity<ActivityInterstitialAdBinding> {
 
