@@ -65,6 +65,8 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8397236892424945~1553929903" />
 
+        <meta-data android:name="com.adop.sdk.APP_DOMAIN" android:value="18250-serving-bidmad.adop.co.kr"/>
+
 <!--        <meta-data-->
 <!--            android:name="applovin.sdk.key"-->
 <!--            android:value="KnkiNki9COTyeQrLAbTXdhThi2rOpl0NZJmxeW46TngyOPnnEe2J6dk_ekkCDoow2rFV1hgMasEHlhqTHT-s9i" />-->

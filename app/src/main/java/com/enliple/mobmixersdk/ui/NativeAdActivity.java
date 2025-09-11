@@ -8,19 +8,22 @@ import android.widget.Toast;
 
 import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.manager.LogPrint;
+import com.mobwith.manager.nativeadview.NativeAdViewItemModel;
 import com.mobwith.sdk.MobwithNativeAdView;
 import com.mobwith.sdk.callback.iBannerCallback;
 import com.mobwith.sdk.models.MobwithAdCategoryModel;
 import com.mobwith.sdk.R;
 import com.mobwith.sdk.databinding.ActivityNativeAdBinding;
 
-public class NativeAdActivity extends BaseActivity<ActivityNativeAdBinding>{
+public class NativeAdActivity extends BaseActivity<ActivityNativeAdBinding> {
 
     private MobwithNativeAdView nativeAdView;
+
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_native_ad;
     }
+
     @Override
     protected void initData() {
 
@@ -53,23 +56,51 @@ public class NativeAdActivity extends BaseActivity<ActivityNativeAdBinding>{
         });
     }
 
-    private void loadAd(){
+    private void loadAd() {
         binding.btnAction.setEnabled(false);
+
+//        nativeAdView = new MobwithNativeAdView(this,
+//                binding.etUnitId.getText().toString(),
+//                binding.bannerContainer,
+//                R.layout.example_native_ad_view,
+//                R.id.mediaContainerView,
+//                R.id.imageViewAD,
+//                R.id.imageViewLogo,
+//                R.id.textViewTitle,
+//                R.id.textViewDesc,
+//                R.id.buttonGo,
+//                R.id.infoViewLayout,
+//                R.id.imageViewInfo
+//        );
 
         nativeAdView = new MobwithNativeAdView(this,
                 binding.etUnitId.getText().toString(),
                 binding.bannerContainer,
-                R.layout.example_native_ad_view,
-                R.id.mediaContainerView,
-                R.id.imageViewAD,
-                R.id.imageViewLogo,
-                R.id.textViewTitle,
-                R.id.textViewDesc,
-                R.id.buttonGo,
-                R.id.infoViewLayout,
-                R.id.imageViewInfo
+                new NativeAdViewItemModel(
+                        R.layout.custom_native_ad_view,
+                        R.id.mediaContainerView,
+                        R.id.imageViewAD,
+                        R.id.imageViewLogo,
+                        R.id.textViewTitle,
+                        R.id.textViewDesc,
+                        R.id.buttonGo,
+                        R.id.infoViewLayout,
+                        R.id.imageViewInfo
+                ),
+                new NativeAdViewItemModel(
+                        R.layout.custom_native_ad_view_2,
+                        R.id.mediaContainerView,
+                        R.id.imageViewAD,
+                        R.id.imageViewLogo,
+                        R.id.textViewTitle,
+                        R.id.textViewDesc,
+                        R.id.buttonGo,
+                        R.id.infoViewLayout,
+                        R.id.imageViewInfo
+                )
+
         );
-        nativeAdView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("","","",""));
+        nativeAdView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("", "", "", ""));
         nativeAdView.setAdListener(new iBannerCallback() {
             @Override
             public void onLoadedAdInfo(boolean result, String errorStr) {

@@ -3,10 +3,9 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.59
+- 최신버전 : 1.0.60
 - 변경사항
-  - 신규 광고 SDK 추가 (DT Exchange)
-  - RewardVideoAdview destroy() 에러 예외처리
+  - NativeAdView 서브 레이아웃 기능 추가
   - 기능 정리 및 최적화 작업
 <br>
 
