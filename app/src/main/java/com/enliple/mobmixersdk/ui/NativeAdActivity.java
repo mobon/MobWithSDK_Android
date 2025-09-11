@@ -73,6 +73,7 @@ public class NativeAdActivity extends BaseActivity<ActivityNativeAdBinding> {
 //                R.id.imageViewInfo
 //        );
 
+        //whowho 서브 레이아웃 기능
         nativeAdView = new MobwithNativeAdView(this,
                 binding.etUnitId.getText().toString(),
                 binding.bannerContainer,
@@ -100,6 +101,7 @@ public class NativeAdActivity extends BaseActivity<ActivityNativeAdBinding> {
                 )
 
         );
+
         nativeAdView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("", "", "", ""));
         nativeAdView.setAdListener(new iBannerCallback() {
             @Override
