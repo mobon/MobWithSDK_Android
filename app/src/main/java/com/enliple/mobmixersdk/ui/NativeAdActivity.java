@@ -3,17 +3,15 @@ package com.enliple.mobmixersdk.ui;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.manager.LogPrint;
-import com.mobwith.manager.nativeadview.NativeAdViewItemModel;
 import com.mobwith.sdk.MobwithNativeAdView;
-import com.mobwith.sdk.callback.iBannerCallback;
-import com.mobwith.sdk.models.MobwithAdCategoryModel;
 import com.mobwith.sdk.R;
+import com.mobwith.sdk.callback.iBannerCallback;
 import com.mobwith.sdk.databinding.ActivityNativeAdBinding;
+import com.mobwith.sdk.models.MobwithAdCategoryModel;
 
 public class NativeAdActivity extends BaseActivity<ActivityNativeAdBinding> {
 
@@ -59,48 +57,48 @@ public class NativeAdActivity extends BaseActivity<ActivityNativeAdBinding> {
     private void loadAd() {
         binding.btnAction.setEnabled(false);
 
-//        nativeAdView = new MobwithNativeAdView(this,
-//                binding.etUnitId.getText().toString(),
-//                binding.bannerContainer,
-//                R.layout.example_native_ad_view,
-//                R.id.mediaContainerView,
-//                R.id.imageViewAD,
-//                R.id.imageViewLogo,
-//                R.id.textViewTitle,
-//                R.id.textViewDesc,
-//                R.id.buttonGo,
-//                R.id.infoViewLayout,
-//                R.id.imageViewInfo
-//        );
-
-        //whowho 서브 레이아웃 기능
         nativeAdView = new MobwithNativeAdView(this,
                 binding.etUnitId.getText().toString(),
                 binding.bannerContainer,
-                new NativeAdViewItemModel(
-                        R.layout.custom_native_ad_view,
-                        R.id.mediaContainerView,
-                        R.id.imageViewAD,
-                        R.id.imageViewLogo,
-                        R.id.textViewTitle,
-                        R.id.textViewDesc,
-                        R.id.buttonGo,
-                        R.id.infoViewLayout,
-                        R.id.imageViewInfo
-                ),
-                new NativeAdViewItemModel(
-                        R.layout.custom_native_ad_view_2,
-                        R.id.mediaContainerView,
-                        R.id.imageViewAD,
-                        R.id.imageViewLogo,
-                        R.id.textViewTitle,
-                        R.id.textViewDesc,
-                        R.id.buttonGo,
-                        R.id.infoViewLayout,
-                        R.id.imageViewInfo
-                )
-
+                R.layout.example_native_ad_view,
+                R.id.mediaContainerView,
+                R.id.imageViewAD,
+                R.id.imageViewLogo,
+                R.id.textViewTitle,
+                R.id.textViewDesc,
+                R.id.buttonGo,
+                R.id.infoViewLayout,
+                R.id.imageViewInfo
         );
+
+        //whowho 서브 레이아웃 기능
+//        nativeAdView = new MobwithNativeAdView(this,
+//                binding.etUnitId.getText().toString(),
+//                binding.bannerContainer,
+//                new NativeAdViewItemModel(
+//                        R.layout.custom_native_ad_view,
+//                        R.id.mediaContainerView,
+//                        R.id.imageViewAD,
+//                        R.id.imageViewLogo,
+//                        R.id.textViewTitle,
+//                        R.id.textViewDesc,
+//                        R.id.buttonGo,
+//                        R.id.infoViewLayout,
+//                        R.id.imageViewInfo
+//                ),
+//                new NativeAdViewItemModel(
+//                        R.layout.custom_native_ad_view_2,
+//                        R.id.mediaContainerView,
+//                        R.id.imageViewAD,
+//                        R.id.imageViewLogo,
+//                        R.id.textViewTitle,
+//                        R.id.textViewDesc,
+//                        R.id.buttonGo,
+//                        R.id.infoViewLayout,
+//                        R.id.imageViewInfo
+//                )
+//
+//        );
 
         nativeAdView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("", "", "", ""));
         nativeAdView.setAdListener(new iBannerCallback() {

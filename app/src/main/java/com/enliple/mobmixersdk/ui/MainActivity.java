@@ -115,6 +115,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
          * TODO: DT Exchange SDK 설정
          * 전달 받은 DT Exchange AppKey 설정
          */
-        MobwithSDK.getInstance().setDTExChangeAppKey("206620");
+//        MobwithSDK.getInstance().setDTExChangeAppKey("206620");
     }
 }
