@@ -3,10 +3,10 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.62
+- 최신버전 : 1.0.63
 - 변경사항
-  - Adfit NativeAdView 기능 추가
-  - API Header key값 수정
+  - 신규 SDK 추가 (Inmobi)
+  - BugFix (AdFit)
 <br>
 
 ## 개발환경
