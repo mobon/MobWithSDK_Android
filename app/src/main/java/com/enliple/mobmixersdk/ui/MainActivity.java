@@ -87,6 +87,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
             }
         });
 
+        binding.btnAdopTest.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, AdopTestActivity.class));
+        });
+
     }
 
     @Override
