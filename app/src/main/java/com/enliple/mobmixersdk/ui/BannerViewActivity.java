@@ -41,6 +41,7 @@ public class BannerViewActivity extends BaseActivity<ActivityBannerViewBinding> 
             @Override
             public void onClick(View v) {
                 LogUtil.log("btnLoad");
+
                 Utils.hideKeyboard(BannerViewActivity.this, getCurrentFocus());
                 loadAd();
             }
@@ -59,6 +60,7 @@ public class BannerViewActivity extends BaseActivity<ActivityBannerViewBinding> 
     }
 
     private void setLoadAd(){
+        binding.bannerContainer.removeAllViews();
         adBannerView = new MobwithBannerView(this);
         adBannerView.setBannerUnitId(binding.etUnitId.getText().toString());
         adBannerView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("","","",""));

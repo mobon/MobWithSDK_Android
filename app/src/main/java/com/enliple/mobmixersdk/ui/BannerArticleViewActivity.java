@@ -6,6 +6,7 @@ import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.sdk.MobwithBannerWithArticleView;
 import com.mobwith.sdk.R;
 import com.mobwith.sdk.callback.iBannerCallback;
+import com.mobwith.sdk.callback.iBannerWithArticleCallback;
 import com.mobwith.sdk.databinding.ActivityBannerArticleViewBinding;
 import com.mobwith.sdk.models.MobwithAdCategoryModel;
 
@@ -54,7 +55,7 @@ public class BannerArticleViewActivity extends BaseActivity<ActivityBannerArticl
         adBannerView = new MobwithBannerWithArticleView(this);
         adBannerView.setBannerUnitId(binding.etUnitId.getText().toString());
         adBannerView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("","A0001","B0001","C0001"));
-        adBannerView.setAdListener(new iBannerCallback() {
+        adBannerView.setAdListener(new iBannerWithArticleCallback() {
             @Override
             public void onLoadedAdInfo(boolean result, String errorCode) {
                 System.out.println("[MobwithBannerWithArticleView] onLoadedAdInfo :  "  +result);
@@ -82,6 +83,10 @@ public class BannerArticleViewActivity extends BaseActivity<ActivityBannerArticl
                 System.out.println("[MobwithBannerWithArticleView] onAdClicked");
             }
 
+            @Override
+            public void onArticleClicked() {
+                System.out.println("[MobwithBannerWithArticleView] onArticleClicked");
+            }
         });
 
         adBannerView.loadAd();

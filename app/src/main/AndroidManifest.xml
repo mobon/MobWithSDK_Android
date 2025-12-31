@@ -56,9 +56,6 @@
         <activity android:name="com.enliple.mobmixersdk.ui.PointBannerActivity"
             android:exported="false"/>
 
-        <activity android:name="com.enliple.mobmixersdk.ui.AdopTestActivity"
-            android:exported="false"/>
-
 
         <meta-data
             android:name="applovin.sdk.key"
