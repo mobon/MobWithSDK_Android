@@ -144,14 +144,14 @@
                 </Button>
 
                 <Button
-                    android:id="@+id/btnAdopTest"
+                    android:id="@+id/btnSmartFrameAd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?attr/colorPrimary"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:layout_marginBottom="12dp"
-                    android:text="ADOP AD TEST">
+                    android:text="SMART FRAME AD">
 
                 </Button>
 
