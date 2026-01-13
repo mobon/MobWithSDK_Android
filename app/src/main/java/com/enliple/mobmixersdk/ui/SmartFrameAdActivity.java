@@ -13,6 +13,7 @@ import com.mobwith.sdk.MobwithFrameBannerView;
 import com.mobwith.sdk.R;
 import com.mobwith.sdk.callback.iBannerCallback;
 import com.mobwith.sdk.databinding.ActivityFrameAdBinding;
+import com.mobwith.sdk.models.MobwithAdCategoryModel;
 import com.mobwith.sdk.utils.MainThreadHandler;
 
 public class SmartFrameAdActivity extends BaseActivity<ActivityFrameAdBinding> {
@@ -102,6 +103,7 @@ public class SmartFrameAdActivity extends BaseActivity<ActivityFrameAdBinding> {
             @Override
             public void onClick(View v) {
                 bannerView.setUnitID(mUnitId);
+                bannerView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("업체코드","대분류","중분류","소분류"));
                 bannerView.loadAd();
             }
         });
