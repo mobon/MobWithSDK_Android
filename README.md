@@ -3,9 +3,9 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.74
+- 최신버전 : 1.0.75
 - 변경사항
-  - Admob mediation SDK 추가
+  - BugFix(Inmobi)
 <br>
 
 ## 개발환경
