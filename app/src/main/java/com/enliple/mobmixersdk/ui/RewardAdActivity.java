@@ -56,7 +56,6 @@ public class RewardAdActivity extends BaseActivity<ActivityRewardAdBinding> {
     private void loadAd(){
         binding.btnLoad.setEnabled(false);
         rewardVideoDialog = new MobwithRewardVideoDialog(this);
-        rewardVideoDialog.setWillCountdown(true);
         rewardVideoDialog.setUnitId(binding.etUnitId.getText().toString());
         rewardVideoDialog.load();
         rewardVideoDialog.setAdListener(new iRewardAdsCallback() {

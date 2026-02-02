@@ -156,7 +156,7 @@
             <LinearLayout
                 android:id="@+id/banner_container"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="80dp"
                 android:gravity="center"
                 android:orientation="vertical"/>
 
