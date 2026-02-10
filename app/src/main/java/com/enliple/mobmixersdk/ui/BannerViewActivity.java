@@ -63,6 +63,7 @@ public class BannerViewActivity extends BaseActivity<ActivityBannerViewBinding> 
         binding.bannerContainer.removeAllViews();
         adBannerView = new MobwithBannerView(this);
         adBannerView.setBannerUnitId(binding.etUnitId.getText().toString());
+//        adBannerView.setInterval(10);
         adBannerView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("","","",""));
         adBannerView.setUseHouseBanner(binding.radioButtonUseHouseBanner.isChecked());
         /**
