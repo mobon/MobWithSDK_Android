@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.mobwith.MobwithSDK;
+import com.mobwith.adapters.MobWithAdMobAdapter;
 import com.mobwith.sdk.R;
 import com.mobwith.sdk.databinding.ActivityMainBinding;
 
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
     @Override
     protected void initView() {
+
         binding.btnBanner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

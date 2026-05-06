@@ -48,8 +48,7 @@ public class InterstitialAdActivity extends BaseActivity<ActivityInterstitialAdB
             public void onClickEvent(Key.INTERSTITIAL_KEYCODE keyCode) {
                 if (keyCode == Key.INTERSTITIAL_KEYCODE.CLOSE_AD) {
                     LogUtil.log("전면 닫음");
-                }
-                else if (keyCode == Key.INTERSTITIAL_KEYCODE.ADCLICK) {
+                } else if (keyCode == Key.INTERSTITIAL_KEYCODE.ADCLICK) {
                     LogUtil.log("전면 광고 클릭");
                 }
             }
@@ -111,14 +110,8 @@ public class InterstitialAdActivity extends BaseActivity<ActivityInterstitialAdB
 
     }
 
-    private void loadAd(){
+    private void loadAd() {
         Key.INTERSTITIAL_TYPE interstitialType;
-        if (binding.radioButtonInterstitialNormal.isChecked()){
-            interstitialType = Key.INTERSTITIAL_TYPE.NORMAL;
-        } else {
-            interstitialType = Key.INTERSTITIAL_TYPE.FULL;
-        }
-        interstitialDialog.setType(interstitialType);
         interstitialDialog.setUnitId(binding.etUnitId.getText().toString());
         interstitialDialog.build();
         interstitialDialog.load();
