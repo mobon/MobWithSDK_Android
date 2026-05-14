@@ -111,7 +111,6 @@ public class InterstitialAdActivity extends BaseActivity<ActivityInterstitialAdB
     }
 
     private void loadAd() {
-        Key.INTERSTITIAL_TYPE interstitialType;
         interstitialDialog.setUnitId(binding.etUnitId.getText().toString());
         interstitialDialog.build();
         interstitialDialog.load();
