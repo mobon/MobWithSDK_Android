@@ -3,10 +3,10 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.82
+- 최신버전 : 1.0.83
 - 변경사항
-  - Frame Ad UI 최적화
-  - Bidmad SDK 최신화
+  - 배너 닫기 버튼 기능 추가
+  - Applovin MAX Imp, Click 통계 API 추가
 <br>
 
 ## 개발환경

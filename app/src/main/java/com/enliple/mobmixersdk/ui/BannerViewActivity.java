@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import com.enliple.mobmixersdk.utils.LogUtil;
 import com.enliple.mobmixersdk.utils.Utils;
 import com.mobwith.MobwithSDK;
+import com.mobwith.manager.LogPrint;
 import com.mobwith.sdk.MobwithBannerView;
 import com.mobwith.sdk.callback.iBannerCallback;
 import com.mobwith.sdk.models.MobwithAdCategoryModel;
@@ -63,7 +64,12 @@ public class BannerViewActivity extends BaseActivity<ActivityBannerViewBinding> 
         binding.bannerContainer.removeAllViews();
         adBannerView = new MobwithBannerView(this);
         adBannerView.setBannerUnitId(binding.etUnitId.getText().toString());
-//        adBannerView.setInterval(10);
+        adBannerView.setCloseBtn(new MobwithBannerView.OnCloseListener() {
+            @Override
+            public void onAdClosed() {
+                LogPrint.d("닫기 버튼 클릭");
+            }
+        });
         adBannerView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("","","",""));
         adBannerView.setUseHouseBanner(binding.radioButtonUseHouseBanner.isChecked());
         /**

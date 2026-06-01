@@ -129,6 +129,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
          * TODO: INMOBI SDK 설정
          * 전달 받은 DT Exchange AppKey 설정
          */
-        MobwithSDK.getInstance().setInMobiAppKey("88ede8a9e7294a59b605b109444c2a9f");
+        MobwithSDK.getInstance().setInMobiAppKey("10000189851");
     }
 }
