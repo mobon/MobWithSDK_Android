@@ -50,14 +50,7 @@ public class RewardAdActivity extends BaseActivity<ActivityRewardAdBinding> {
 
     @Override
     protected void initData() {
-
-    }
-
-    private void loadAd(){
-        binding.btnLoad.setEnabled(false);
-        rewardVideoDialog = new MobwithRewardVideoDialog(this);
-        rewardVideoDialog.setUnitId(binding.etUnitId.getText().toString());
-        rewardVideoDialog.load();
+        rewardVideoDialog = new MobwithRewardVideoDialog(this).build();
         rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
             @Override
             public void onLoadedAdInfo(boolean result, String errorStr) {
@@ -107,6 +100,11 @@ public class RewardAdActivity extends BaseActivity<ActivityRewardAdBinding> {
                 Toast.makeText(RewardAdActivity.this, "광고 열기 실패", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void loadAd(){
+//        binding.btnLoad.setEnabled(false);
+        rewardVideoDialog.setUnitId(binding.etUnitId.getText().toString());
         rewardVideoDialog.load();
     }
 }
