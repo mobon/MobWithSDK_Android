@@ -55,11 +55,11 @@ dependencies {
     //Mobwith SDK 라이브러리 추가
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.84'
+    implementation 'io.github.mobon:mobwithSDK:1.0.86'
 
     //adop
-    implementation 'ad.helper.openbidding:admob-obh:3.18.0'
-    implementation 'com.adop.sdk:bidmad-androidx:3.18.0'
+    implementation 'ad.helper.openbidding:admob-obh:3.25.0'
+    implementation 'com.adop.sdk:bidmad-androidx:3.25.0'
 //    implementation 'com.adop.sdk.adapter:adfit:3.12.15.2'        //24.11.27
     implementation 'com.adop.sdk.adapter:admob:22.0.0.6'
     implementation 'com.adop.sdk.adapter:adpie:1.13.6.0'
