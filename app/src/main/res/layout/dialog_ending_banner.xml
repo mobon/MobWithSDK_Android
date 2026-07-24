@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+
+        <!-- 광고 영역 -->
+        <FrameLayout
+            android:id="@+id/fl_ad_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0" />
+
+        <!-- 하단 버튼 영역 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_close"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="닫기"
+                android:textSize="15sp"
+                android:textColor="#666666"
+                android:background="@android:color/transparent" />
+
+            <!-- 버튼 구분선 -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#E0E0E0" />
+
+            <Button
+                android:id="@+id/btn_view_more"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="자세히보기"
+                android:textSize="15sp"
+                android:textColor="#2196F3"
+                android:textStyle="bold"
+                android:background="@android:color/transparent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

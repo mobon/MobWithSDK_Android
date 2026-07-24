@@ -96,6 +96,28 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
             }
         });
 
+        binding.btnSplashAd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SplashAdTestActivity.class));
+            }
+        });
+
+        binding.btnHybridBridge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, HybridBannerBridgeTestActivity.class));
+            }
+        });
+
+        binding.btnEndingBannerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, EndingBannerViewTestActivity.class));
+            }
+        });
+
+
     }
 
     @Override
@@ -129,6 +151,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
          * TODO: INMOBI SDK 설정
          * 전달 받은 DT Exchange AppKey 설정
          */
-        MobwithSDK.getInstance().setInMobiAppKey("10000189851");
+        MobwithSDK.getInstance().setInMobiAppKey("10000161626");
     }
 }

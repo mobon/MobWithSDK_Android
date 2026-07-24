@@ -58,6 +58,14 @@
 
         <activity android:name="com.enliple.mobmixersdk.ui.SmartFrameAdActivity"
             android:exported="false"/>
+        <activity android:name="com.enliple.mobmixersdk.ui.EndingBannerViewTestActivity"
+            android:exported="false"/>
+        <activity android:name="com.enliple.mobmixersdk.ui.SplashActivity"
+            android:exported="false"/>
+        <activity android:name="com.enliple.mobmixersdk.ui.SplashAdTestActivity"
+            android:exported="false"/>
+        <activity android:name="com.enliple.mobmixersdk.ui.HybridBannerBridgeTestActivity"
+            android:exported="false"/>
 
 
         <meta-data
