@@ -9,9 +9,11 @@ import androidx.annotation.Nullable;
 import com.mobwith.manager.LogPrint;
 import com.mobwith.sdk.MobwithSplashBannerView;
 import com.mobwith.sdk.R;
+import com.mobwith.sdk.databinding.ActivityRewardAdBinding;
+import com.mobwith.sdk.databinding.ActivitySplashBinding;
 import com.mobwith.sdk.utils.MainThreadHandler;
 
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
 
     private static final String DEFAULT_UNIT_ID = "10891162";
     private static final long DISMISS_DELAY_MS = 3000L;
@@ -51,7 +53,7 @@ public class SplashActivity extends BaseActivity {
         }
         isFullScreen = getIntent().getBooleanExtra("isFullScreen", false);
 
-        splashBannerView = new MobwithSplashBannerView(this, unitId, isFullScreen);
+        splashBannerView = new MobwithSplashBannerView(this, binding.adContainer, unitId, isFullScreen);
         splashBannerView.setAdListener(new MobwithSplashBannerView.OnSplashAdListener() {
             @Override
             public void onSplashAdDidReceived() {
