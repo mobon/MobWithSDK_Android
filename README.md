@@ -3,10 +3,10 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.88
+- 최신버전 : 1.0.89
 - 변경사항
-  - SplashAd Container 파라미터 추가
-  - HybridBannerBridgeView bug fix
+  - HybridBannerBridgeView 스크립트 추가
+  - HybridBannerBridgeView webViewFinishLoad() 함수 수정
 <br>
 
 ## 개발환경

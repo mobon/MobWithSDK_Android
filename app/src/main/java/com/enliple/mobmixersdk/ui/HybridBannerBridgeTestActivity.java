@@ -1,18 +1,15 @@
 package com.enliple.mobmixersdk.ui;
 
-import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.mobwith.sdk.HybridBannerBridge;
 import com.mobwith.sdk.R;
+import com.mobwith.sdk.databinding.ActivityHybridBannerBridgeTestBinding;
 
-public class HybridBannerBridgeTestActivity extends BaseActivity {
-
-    private WebView webView;
+public class HybridBannerBridgeTestActivity extends BaseActivity<ActivityHybridBannerBridgeTestBinding> {
 
     @Override
     protected int getLayoutResId() {
@@ -21,8 +18,7 @@ public class HybridBannerBridgeTestActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        webView = findViewById(R.id.webView);
-        HybridBannerBridge hybridBannerBridge = HybridBannerBridge.attach(this, webView);
+        HybridBannerBridge hybridBannerBridge = HybridBannerBridge.attach(this, binding.webView);
         hybridBannerBridge.setOnAdListener(new HybridBannerBridge.OnAdListener() {
             @Override
             public void onAdLoaded() {
@@ -38,16 +34,16 @@ public class HybridBannerBridgeTestActivity extends BaseActivity {
             }
         });
 
-        webView.setWebViewClient(new WebViewClient(){
+        binding.webView.setWebViewClient(new WebViewClient(){
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                hybridBannerBridge.webViewFinishLoad();
+                hybridBannerBridge.webViewFinishLoad(true);
             }
         });
 
 
-        webView.loadUrl("https://dhnasvar.synology.me/link/test.html");
+        binding.webView.loadUrl("https://dhnasvar.synology.me/link/test.html");
     }
 
     @Override
