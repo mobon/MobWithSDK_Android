@@ -64,12 +64,6 @@ public class BannerViewActivity extends BaseActivity<ActivityBannerViewBinding> 
         binding.bannerContainer.removeAllViews();
         adBannerView = new MobwithBannerView(this);
         adBannerView.setBannerUnitId(binding.etUnitId.getText().toString());
-        adBannerView.setCloseBtn(new MobwithBannerView.OnCloseListener() {
-            @Override
-            public void onAdClosed() {
-                LogPrint.d("닫기 버튼 클릭");
-            }
-        });
         adBannerView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("","","",""));
         adBannerView.setUseHouseBanner(binding.radioButtonUseHouseBanner.isChecked());
         /**
