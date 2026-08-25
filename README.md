@@ -3,10 +3,9 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.94
+- 최신버전 : 1.0.95
 - 변경사항
-  - NativeAdView Kakao BizBoard Banner 광고 노출 기능 추가
-  - Banner 광고 닫기 (X) 버튼 크기 조절
+  - Bug fix
 <br>
 
 ## 개발환경
