@@ -51,9 +51,8 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
         if (!TextUtils.isEmpty(intentUnitId)) {
             unitId = intentUnitId;
         }
-        isFullScreen = getIntent().getBooleanExtra("isFullScreen", false);
 
-        splashBannerView = new MobwithSplashBannerView(this, binding.adContainer, unitId, isFullScreen);
+        splashBannerView = new MobwithSplashBannerView(this, binding.adContainer, unitId);
         splashBannerView.setAdListener(new MobwithSplashBannerView.OnSplashAdListener() {
             @Override
             public void onSplashAdDidReceived() {
@@ -74,7 +73,6 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
             }
         });
 
-        splashBannerView.useFullScreenAd(isFullScreen);
         splashBannerView.setUnitId(unitId);
         splashBannerView.setTimeOutSec(5);
         splashBannerView.loadAd();

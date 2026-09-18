@@ -25,7 +25,6 @@ public class NativeAdActivity extends BaseActivity<ActivityNativeAdBinding> {
 
     @Override
     protected void initData() {
-
     }
 
     @Override

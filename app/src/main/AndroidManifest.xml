@@ -78,7 +78,13 @@
 
         <meta-data android:name="com.adop.sdk.APP_DOMAIN" android:value="18250-serving-bidmad.adop.co.kr"/>
 
-<!--        <meta-data-->
+        <meta-data android:name="adpopcorn_ssp_app_key" android:value="175289551"/> <!--증권통-->
+
+        <meta-data
+            android:name="com.naver.gfpsdk.PUBLISHER_CD"
+            android:value="7976096509"/>
+
+        <!--        <meta-data-->
 <!--            android:name="applovin.sdk.key"-->
 <!--            android:value="KnkiNki9COTyeQrLAbTXdhThi2rOpl0NZJmxeW46TngyOPnnEe2J6dk_ekkCDoow2rFV1hgMasEHlhqTHT-s9i" />-->
     </application>

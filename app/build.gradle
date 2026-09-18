@@ -10,8 +10,8 @@ android {
     compileSdkVersion 36
 
     defaultConfig {
-//        applicationId "com.mobwith.sdk"
-        applicationId "semaphore.stockclient"
+        applicationId "com.mobwith.sdk"
+//        applicationId "semaphore.stockclient"
 //        applicationId "com.moneyweather"
 
         minSdkVersion 23
@@ -55,7 +55,7 @@ dependencies {
     //Mobwith SDK 라이브러리 추가
     implementation 'com.google.android.gms:play-services-ads:23.0.0'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.99'
+    implementation 'io.github.mobon:mobwithSDK:1.0.102'
 
     //adop
     implementation 'ad.helper.openbidding:admob-obh:3.25.0'
@@ -85,6 +85,13 @@ dependencies {
 
     implementation "com.applovin:applovin-sdk:11.8.2"
     implementation "com.kakao.adfit:ads-base:3.12.15"
+
+    //adpopcorn
+    implementation 'com.igaworks.ssp:IgawAdPopcornSSP:3.11.1'
+    implementation platform('com.naver.gfpsdk:nam-bom:8.17.0')
+    implementation 'com.naver.gfpsdk:nam-core'
+    // NAM 8.x.x 버전에서는 아래 sdk 포함 필요.
+    implementation 'com.naver.gfpsdk.mediation:nam-nda'
 
     implementation 'com.github.Dimezis:BlurView:version-3.2.0'
 
