@@ -95,7 +95,6 @@ public class FreePassAdActivity extends BaseActivity<ActivityFreePassAdBinding>{
             }
             freePassAdView = new MobwithFreePassAdView(this);
             freePassAdView.setMcName("후후");
-            freePassAdView.setMcLogoImage(ContextCompat.getDrawable(this, com.mobwith.sdk.R.drawable.logo_whowho));
             freePassAdView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("","A0001","B0001","C0001"));
             freePassAdView.setBannerUnitId(binding.etUnitId.getText().toString());
 //            freePassAdView.setFrame(normalViewType, productViewType);
