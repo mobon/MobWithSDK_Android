@@ -3,11 +3,12 @@ MobWith SDK 를 이용하여 광고를 노출하는 방법을 제공하고 있�
 
 
 ## 최신 버전 및 변경사항
-- 최신버전 : 1.0.110
+- 최신버전 : 1.0.111
 - 변경사항
-  - 네이티브 광고 로드 시 중복 요청이 발생하지 않도록 로직 개선 
-  - MediationManager 객체 관리 고도화 및 MediationManager.release() 보완
-  - 네이티브 광고 리소스 해제 함수 destroy() 추가
+  - NativeAD 영상광고 송출
+  - 리워드 배너 (어포던스 크기 변경, 배경 색상 변경 등 설정 기능)
+  - Applovin Mediation NativeAd 영상 광고 송출
+  - 애피어 시그널 데이터 전송
 <br>
 
 ## 개발환경
