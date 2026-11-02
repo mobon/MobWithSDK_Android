@@ -15,6 +15,25 @@ buildscript {
             url "https://raw.githubusercontent.com/coupang-ads-sdk/android/main"
             allowInsecureProtocol = true
         }
+
+//        maven {
+//            url 'https://mobon.github.io/MobWithMavenRepo/'
+//        }
+
+//        maven {
+//            url 'https://img.mobwithad.com/ad/imgfile/maven-repo'
+//            content {
+//                includeGroup 'io.github.mobon'
+//            }
+//        }
+
+//        maven {
+//            url 'https://maven.mobwithad.com/ad/maven-repo'
+//            content {
+//                includeGroup 'io.github.mobon'
+//            }
+//        }
+
         google()
         mavenCentral()
     }
@@ -83,6 +102,23 @@ allprojects {
         }
         //------------------------------------------------for levelplay(ironSource)
 
+//        maven {
+//            url 'https://mobon.github.io/MobWithMavenRepo/'
+//        }
+
+//        maven {
+//            url 'https://img.mobwithad.com/ad/imgfile/maven-repo/'
+//            content {
+//                includeGroup 'io.github.mobon'
+//            }
+//        }
+
+        maven {
+            url 'https://maven.mobwithad.com/ad/maven-repo/'
+            content {
+                includeGroup 'io.github.mobon'
+            }
+        }
 
         mavenCentral()
     }
